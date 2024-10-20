@@ -1,0 +1,267 @@
+/* start global style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 0.2rem;
+}
+
+html , body {
+    position: relative;
+    height: 100%;
+}
+
+:root {
+    --text-color: #ffffff;
+    --nav-margin: 4rem;
+    --underline-color: #1c1c1c;
+}
+
+body {
+    font-family: ShopifySans, Helvetica, Arial, Lucida Grande, sans-serif;
+    background-color: #efefef;
+}
+
+/* end global style */
+
+/* start header */
+header {
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.sale {
+    background-color: #1c1c1c;
+    padding: 1rem 0;
+    height: 75px;
+    font-size: 0.85rem;
+}
+
+.sale a {
+    all: unset;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.sale a::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: .3s ease-in-out;
+}
+
+.sale a:hover::after {
+    width: 0;
+}
+
+.time-indicator {
+    font-size: 0.7rem;
+}
+
+.hero {
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* navbar */
+.navbar {
+    background-color: transparent!important;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    color: var(--text-color) !important;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+}
+
+.navbar-brand {
+    width: 150px !important;
+}
+.navbar-brand img{
+    width: 100%;
+}
+.nav-item button {
+    all: unset;
+}
+
+.dropdown-menu-large {
+    display: none;
+    /* width: 1200px; */
+    height: 100%;
+    z-index: 2;
+    /* Adjust width as needed */
+}
+
+.nav-item:hover .dropdown-menu-large {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-column {
+    padding: 20px;
+}
+
+/* end navbar */
+
+/* swiper hero css */
+.hero .hero-swiper {
+    width: 100%;
+    height: calc(100vh - 75px);
+    /* height: 100vh; */
+    position: relative;
+}
+
+.hero .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.hero .swiper-slide .slide-video,
+.hero .swiper-slide .slide-img {
+    /* min-width: 100%;
+    max-width: 100%; */
+    /* height: 100%; */
+    /* object-fit: cover; */
+}
+
+.hero .swiper-slide video,
+.hero .swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    vertical-align: middle;
+}
+
+.hero .swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    right: 10px !important;
+    transform: translateX(-50%);
+    /* تعديل موقعها إلى المنتصف */
+    z-index: 10;
+    /* تأكد من أنها فوق العناصر الأخرى */
+}
+
+.hero .swiper-pagination-bullet {
+    background: #fff;
+    /* لون الخلفية للنقاط */
+    opacity: 0.5;
+    /* شفافية النقاط */
+    width: 12px;
+    /* عرض النقطة */
+    height: 12px;
+    /* ارتفاع النقطة */
+    border-radius: 50%;
+    /* لجعلها دائرية */
+    margin: 0 5px;
+    /* المسافة بين النقاط */
+}
+
+.hero .swiper-pagination-bullet-active {
+    opacity: 1;
+    /* النقطة النشطة ستكون بالكامل */
+    border: 2px solid #efefef !important;
+    background-color: transparent !important;
+}
+
+/* Main Products Section */
+/* .main-products-section {
+
+} */
+
+.products-categories {
+    margin: auto;
+    width: fit-content;
+}
+
+.active {
+    position: relative;
+}
+
+.active::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--underline-color);
+    transition: .3s ease-in-out;
+}
+
+.active:hover::after {
+    width: 0;
+}
+
+
+/* Product Swiper CSS */
+.product-cards {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: calc(100% - 75px);
+    /* margin-top: 37px; */
+}
+
+.product-cards .swiper-wrapper {
+width: 100% !important;
+}
+
+.product-cards .swiper {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: 0 4rem; */
+}
+
+.product-cards .swiper-slide{
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: calc((100% - 30px) / 2) !important;
+
+    /* Center slide text vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prod-img {
+    width: 50%;
+}
+
+.prod-img img {
+    width: 100%;
+}

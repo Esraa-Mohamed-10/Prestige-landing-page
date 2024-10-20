@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Demo styles -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        section {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            height: calc(100% - 75px);
+            /* margin-top: 37px; */
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            /* padding: 0 4rem; */
+        }
+
+        .products .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            height: calc((100% - 30px) / 2) !important;
+
+            /* Center slide text vertically */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .prod-img {
+            width: 50%;
+        }
+
+        .prod-img img {
+            width: 100%;
+        }
+
+        nav {
+            height: 75px;
+            width: 100%;
+            background-color: burlywood;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <nav></nav>
+    <section>
+        <div class="swiper main-product-section">
+            <div class="swiper-wrapper products">
+                <div class="swiper-slide prod-card">
+                    <div class="prod-img"><img src="new-assets/brownBag.avif" alt=""></div>
+                    <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                    <p>380$</p>
+                </div>
+                <div class="swiper-slide">
+                    <div class="prod-img"><img src="new-assets/greenBag.avif" alt=""></div>
+                    <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                    <p>380$</p>
+                </div>
+                <div class="swiper-slide"><div class="prod-img"><img src="new-assets/backbag.jpeg" alt=""></div>
+                <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                <p>380$</p></div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".main-product-section", {
+            slidesPerView: 4,
+            grid: {
+                rows: 2,
+            },
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>
