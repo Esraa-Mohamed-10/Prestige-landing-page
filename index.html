@@ -29,6 +29,10 @@
       href="https://cdn.shopify.com/static/fonts/ShopifySans--regular.woff2">
    <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2"
       href="https://cdn.shopify.com/static/fonts/ShopifySans--bold.woff2">
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+
+   <script src="https://unpkg.com/split-grid/dist/split-grid.js"></script>
 </head>
 
 <body class="rtl">
@@ -360,48 +364,320 @@
    <!-- tenth section -->
    <section class="sale-section d-flex flex-column justify-content-center">
       <div class="container-fluid px-5">
-      <div class="d-flex sale-section-content align-items-center justify-content-between px-5">
-         <div class="sale-section-text text-white">
-            <p class="text-uppercase">limited time only</p>
-            <h3 class="my-4 text-uppercase font">super sale up to 40% off</h3>
-            <p class="mb-4">Shop our selection of exclusive handbags and backpacks at reduced price during the Super Sale. Hurry up!</p>
-            <button class="white-button text-uppercase">shop now</button>
-         </div>
+         <div class="d-flex sale-section-content align-items-center justify-content-between px-5">
+            <div class="sale-section-text text-white">
+               <p class="text-uppercase">limited time only</p>
+               <h3 class="my-4 text-uppercase font">super sale up to 40% off</h3>
+               <p class="mb-4">Shop our selection of exclusive handbags and backpacks at reduced price during the Super
+                  Sale. Hurry up!</p>
+               <button class="white-button text-uppercase">shop now</button>
+            </div>
 
-         <div class="sale-section-counter">
-            <div class="container-fluid">
-               <div class="count-down text-white d-flex align-items-center">
-                  <div class="sale-time mr-3 text-center">
-                     <p class="mb-0">36</p>
-                     <p class="mb-0 sale-time-indicator">Day</p>
-                  </div>
-                  <div class="mr-3">:</div>
-                  <div class="sale-time mr-3 text-center">
-                     <p class="mb-0">21</p>
-                     <p class="mb-0 sale-time-indicator">Hrs</p>
-                  </div>
-                  <div class="mr-3">:</div>
-                  <div class="sale-time mr-3 text-center">
-                     <p class="mb-0">11</p>
-                     <p class="mb-0 sale-time-indicator">Min</p>
-                  </div>
-                  <div class="mr-3">:</div>
-                  <div class="sale-time mr-3 text-center">
-                     <p class="mb-0">49</p>
-                     <p class="mb-0 sale-time-indicator">Sec</p>
+            <div class="sale-section-counter">
+               <div class="container-fluid">
+                  <div class="count-down text-white d-flex align-items-center">
+                     <div class="sale-time mr-3 text-center">
+                        <p class="mb-0">36</p>
+                        <p class="mb-0 sale-time-indicator">Day</p>
+                     </div>
+                     <div class="mr-3">:</div>
+                     <div class="sale-time mr-3 text-center">
+                        <p class="mb-0">21</p>
+                        <p class="mb-0 sale-time-indicator">Hrs</p>
+                     </div>
+                     <div class="mr-3">:</div>
+                     <div class="sale-time mr-3 text-center">
+                        <p class="mb-0">11</p>
+                        <p class="mb-0 sale-time-indicator">Min</p>
+                     </div>
+                     <div class="mr-3">:</div>
+                     <div class="sale-time mr-3 text-center">
+                        <p class="mb-0">49</p>
+                        <p class="mb-0 sale-time-indicator">Sec</p>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-   </div>
+   </section>
+
+   <!-- eleventh section -->
+   <section class="discover p-5">
+      <div class="container-fluid text-center">
+         <h3 class="text-uppercase">discover our products</h3>
+         <p class="text-capitalize my-4">varied collection of bags fit your needs</p>
+
+         <div class="row text-white">
+            <div class="col discover-card">
+               <div class="discover-card-img">
+                  <img src="new-assets/imgs/discover1.avif" alt="">
+               </div>
+               <p>Bags</p>
+            </div>
+            <div class="col discover-card">
+               <div class="discover-card-img">
+                  <img src="new-assets/imgs/discover2.avif" alt="">
+               </div>
+               <p>Weekend Bags</p>
+            </div>
+            <div class="col discover-card">
+               <div class="discover-card-img">
+                  <img src="new-assets/imgs/discover3.avif" alt="">
+               </div>
+               <p>Leather Bags</p>
+            </div>
+            <div class="col discover-card">
+               <div class="discover-card-img">
+                  <img src="new-assets/imgs/discover4.avif" alt="">
+               </div>
+               <p>Bags</p>
+            </div>
+            <div class="col discover-card">
+               <div class="discover-card-img">
+                  <img src="new-assets/imgs/discover5.webp" alt="">
+               </div>
+               <p>University Bags</p>
+            </div>
+            <div class="col discover-card">
+               <div class="discover-card-img">
+                  <img src="new-assets/imgs/discover6.webp" alt="">
+               </div>
+               <p>Work Bags</p>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+   <!-- twelve section -->
+   <section class="py-5 text-uppercase best-seller">
+      <div class="weekend my-2 text-center">
+         <p>Latest Products</p>
+      </div>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col text-center prod-card">
+               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+               <p>380$</p>
+               <button class="add-button">+</button>
+            </div>
+            <div class="col text-center prod-card">
+               <div class="prod-img"><img src="new-assets/greenBag.avif" alt="" class="main-img"></div>
+               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+               <p>380$</p>
+               <button class="add-button">+</button>
+            </div>
+            <div class="col text-center prod-card">
+               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+               <p>380$</p>
+               <button class="add-button">+</button>
+            </div>
+            <div class="col text-center prod-card">
+               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+               <p>380$</p>
+               <button class="add-button">+</button>
+            </div>
+         </div>
+
+      </div>
+   </section>
+
+   <!-- thirteen section -->
+   <section class="split-screen">
+      <div class="container-fluid spit-container">
+         <div class="split-text text-center">
+            <h3>Le Dalia</h3>
+            <p>Choose your colour</p>
+         </div>
+
+         <div class="split-products">
+            <div class="split-product split-left">
+               <div><img src="new-assets/imgs/split-left.webp" alt=""></div>
+            </div>
+            <div class="gutter"></div>
+            <div class="split-product split-right">
+               <div><img src="new-assets/imgs/split-right.webp" alt=""></div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- fourteen -->
+
+   <!-- fifteen -->
+   <section class="benefits py-5">
+      <div class="container-fluid">
+         <div class="row">
+
+            <div class="col text-center">
+               <i class="fas fa-truck"></i>
+               <h5 class="my-3">Express delivery</h5>
+               <p>DHL express delivery worldwide</p>
+            </div>
+            <div class="col text-center">
+               <i class="fas fa-undo-alt"></i>
+               <h5 class="my-3">Free Return</h5>
+               <p>Free return for 30 days for any order delivered in France</p>
+            </div>
+
+            <div class="col text-center">
+               <i class="far fa-comments"></i>
+               <h5 class="my-3">Available customer service</h5>
+               <p>Available via Whatsapp on +33123456789</p>
+            </div>
+
+            <div class="col text-center">
+               <i class="fas fa-money-check-alt"></i>
+               <h5 class="my-3">Payment in 3x</h5>
+               <p>Take advantage of a payment in 3x without fees from $100 of purchase</p>
+            </div>
+
+
+         </div>
+      </div>
+   </section>
+
+   <!-- sixten -->
+   <section class="faq py-5">
+      <div class="container-fluid">
+
+         <div class="faq-title text-center">
+            <h3>FAQ</h3>
+            <p class="text-capitalize my-3">frequently asked questions</p>
+         </div>
+
+         <div class="accordion px-5" id="accordionExample" >
+            <div class="card">
+               <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                     <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        What types of leather do you use for your bags?
+                     </button>
+                  </h5>
+               </div>
+
+               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                     assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                     labore sustainable VHS.
+                  </div>
+               </div>
+            </div>
+
+            <div class="card">
+               <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                     <button class="faq-btn collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How do I care for and clean my leather bag?
+                     </button>
+                  </h5>
+               </div>
+               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                     assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                     labore sustainable VHS.
+                  </div>
+               </div>
+            </div>
+
+            <div class="card">
+               <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                     <button class="faq-btn collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        How long does shipping usually take?
+                     </button>
+                  </h5>
+               </div>
+               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                     assumenda shoreditch et.
+                  </div>
+               </div>
+            </div>
+
+            
+            <div class="card">
+               <div class="card-header" id="headingfour">
+                  <h5 class="mb-0">
+                     <button class="faq-btn collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                        Do you offer customization or personalization options for your leather bags?
+                     </button>
+                  </h5>
+               </div>
+               <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                  <div class="card-body">
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                     assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                     labore sustainable VHS.
+                  </div>
+               </div>
+            </div>
+
+            <div class="card">
+               <div class="card-header" id="headingFive">
+                  <h5 class="mb-0">
+                     <button class="faq-btn collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        What is your return and exchange policy?
+                     </button>
+                  </h5>
+               </div>
+               <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                     assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                     labore sustainable VHS.
+                  </div>
+               </div>
+            </div>
+
+
+         </div>
+      </div>
    </section>
 
    <script src="assets/jquery-3.6.0.min.js?v=1.0.0"></script>
    <script src="assets/jquery-ui.min.js"></script>
    <script src="assets/bootstrap.min.js"></script>
-   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <!-- script file -->
    <script src="new-assets/index.js"></script>
+
+   <!-- swiper js cdn -->
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+   <!-- split js cdn -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+   <script src="https://unpkg.com/split-grid/dist/split-grid.js"></script>
 </body>
 
 </html>

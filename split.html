@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Split Example</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .split-screen {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .spit-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .split-text {
+            margin-bottom: 20px;
+        }
+
+        .split-products {
+            display: grid;
+            grid-template-columns: 1fr 10px 1fr;
+            height: 80%;
+            width: 100%;
+        }
+
+        .split-product {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: width 0.3s ease;
+        }
+
+        .split-product img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .gutter {
+            background-color: #ccc;
+            cursor: ew-resize;
+            width: 10px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+</head>
+<body>
+    <section class="split-screen">
+        <div class="container-fluid spit-container">
+            <div class="split-text text-center">
+                <h3>Le Dalia</h3>
+                <p>Choose your colour</p>
+            </div>
+
+            <div class="split-products">
+                <div class="split-product split-left">
+                    <div><img src="new-assets/imgs/split-left.webp" alt=""></div>
+                </div>
+                <div class="gutter"></div>
+                <div class="split-product split-right">
+                    <div><img src="new-assets/imgs/split-right.webp" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+    <script>
+        // احضار العناصر:
+        plit(['.split-left', '.split-right'], {
+        gutterSize: 2, 
+        sizes: [50, 50],
+        cursor: 'ew-resize'
+    });
+    </script>
+</body>
+</html>

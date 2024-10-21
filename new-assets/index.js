@@ -56,14 +56,55 @@ prodCards.forEach(prodCard => {
 
 
 // video code
-const video = document.getElementById('secondVideo');
-const playButton = document.getElementById('playButton');
+// const video = document.getElementById('secondVideo');
+// const playButton = document.getElementById('playButton');
 
-playButton.addEventListener('click', function() {
-    // Hide the button
-    playButton.style.display = 'none';
-    // Show the video controls
-    video.setAttribute('controls', 'controls');
-    // Play the video
-    video.play();
-});
+// playButton.addEventListener('click', function() {
+//     // Hide the button
+//     playButton.style.display = 'none';
+//     // Show the video controls
+//     video.setAttribute('controls', 'controls');
+//     // Play the video
+//     video.play();
+// });
+
+
+// split screen code
+
+// window.onload = function() {
+//     Split(['.split-left', '.split-right'], {
+//         gutterSize: 2, 
+//         sizes: [50, 50],
+//         cursor: 'ew-resize'
+//     });
+// };
+
+const leftProduct = document.querySelector('.split-left');
+        const rightProduct = document.querySelector('.split-right');
+        const gutter = document.querySelector('.gutter');
+        const splitProducts = document.querySelector('.split-products');
+
+        let isDragging = false;
+
+        gutter.addEventListener('mousedown', function() {
+            isDragging = true;
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            
+            const containerWidth = splitProducts.offsetWidth;
+            const offsetX = e.clientX - splitProducts.getBoundingClientRect().left;
+            const leftWidthPercent = (offsetX / containerWidth) * 100;
+
+            // تأكد من بقاء النسب بين 10% و 90%:
+            if (leftWidthPercent < 10 || leftWidthPercent > 90) return;
+            
+            // تحديث تخطيط الشبكة بناءً على السحب:
+            splitProducts.style.gridTemplateColumns = `${leftWidthPercent}% 10px ${100 - leftWidthPercent}%`;
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+        });
+

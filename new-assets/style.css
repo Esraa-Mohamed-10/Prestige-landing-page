@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     letter-spacing: 0.2rem;
 }
 
@@ -10,6 +10,7 @@ html,
 body {
     position: relative;
     height: 100%;
+    /* overflow: hidden; */
 }
 
 :root {
@@ -573,3 +574,147 @@ video:fullscreen::-webkit-media-controls {
 .sale-time-indicator {
     font-size: var(--small-font);
 }
+
+/* eleven section */
+
+/* .discover-card {
+    position: relative;
+} */
+
+
+
+.discover-card-img {
+    /* display: flex;
+    justify-content: center;   */
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    border-radius: 2px;
+    height: 28vh;
+}
+
+.discover-card-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 25, 25, 0.226);
+    z-index: 1; 
+}
+
+.discover-card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: 2s ease-in-out all;
+    z-index: 0; 
+}
+
+.discover-card-img:hover img {
+    transform: scale(1.1); 
+}
+
+.discover-card-img + p {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center; 
+    width: 60%; 
+    z-index: 2;
+    font-size: 18px;
+    text-wrap: wrap;
+}
+
+/* split screen style */
+
+
+.split-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.spit-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.split-text {
+    margin-bottom: 20px;
+}
+
+.split-products {
+    display: grid;
+    grid-template-columns: 1fr 10px 1fr;
+    height: 80%;
+    width: 100%;
+}
+
+.split-product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+.split-product img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.gutter {
+    background-color: #ccc;
+    cursor: ew-resize;
+    width: 10px;
+}
+
+
+
+/* fifteen */
+.benefits i {
+    font-size: var(--title-size);
+    color: #2e2e2e;
+}
+
+.benefits h5 {
+    font-size: 16px;
+}
+
+.benefits p{
+    font-size: var(--small-font);
+    letter-spacing: 0.15rem;
+}
+
+
+/* sixten */
+.faq-btn {
+    all: unset;
+    font-size: 16px;
+}
+
+.faq-btn:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+/* .card-header:first-child {
+    border-top: 1px solid var(--underline-color) !important;
+} */
+
+.card-header {
+    background-color: #bebebe !important;
+    color: var(--black-color) !important;
+    /* border: 1px solid var(--underline-color) !important; */
+    border-top: none !important;
+    outline: none !important;
+}
+
