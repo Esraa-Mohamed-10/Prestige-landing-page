@@ -17,6 +17,8 @@ body {
     --black-color: black;
     --nav-margin: 4rem;
     --underline-color: #1c1c1c;
+    --small-font: 12px;
+    --title-size:30px;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
     background-color: #efefef;
 }
 
-button {
+.white-button {
     all: unset;
     background-color: var(--text-color);
     padding: 10px;
@@ -33,16 +35,35 @@ button {
     background: linear-gradient(to left, var(--text-color), var(--text-color)) no-repeat;
     background-size: 100% 100%;
     box-sizing: border-box !important;
+    height: 6.5vh;
 }
 
-button:hover {
+.white-button:hover {
     background-position: -100% 0;
-    /* تحريك الخلفية إلى اليسار */
     background-size: 0% 100%;
-    /* تصغير الخلفية إلى صفر */
     border: 1px solid var(--text-color);
     color: var(--text-color);
 }
+
+.black-button {
+    all: unset;
+    background-color: var(--black-color);
+    padding: 10px;
+    color: var(--text-color);
+    transition: background 0.7s ease-out, border 0.3s, color 0.3s;
+    background: linear-gradient(to left, var(--black-color), var(--black-color)) no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box !important;
+    height: 6.5vh;
+}
+
+.black-button:hover {
+    background-position: -100% 0;
+    background-size: 0% 100%;
+    border: 1px solid black;
+    color: var(--black-color) !important;
+}
+
 /* end global style */
 
 
@@ -249,8 +270,6 @@ header {
     position: relative;
 }
 
-
-
 .active::after {
     content: '';
     width: 100%;
@@ -270,21 +289,9 @@ header {
 .featured-button {
     width: fit-content;
     margin: auto;
+    height: 6.5vh;
 }
 
-
-.featured-button button{
-    background: linear-gradient(to left, var(--black-color), var(--black-color)) no-repeat;
-    background-size: 100% 100%;
-    color: var(--text-color) !important;
-    box-sizing: border-box !important;
-}
-.featured-button button:hover{
-    background-position: -100% 0;
-    background-size: 0% 100%;
-    border: 1px solid black;
-    color: var(--black-color) !important;
-}
 
 /* third section */
 .new-product-section {
@@ -425,3 +432,144 @@ video::-webkit-media-controls {
 video:fullscreen::-webkit-media-controls {
     display: block !important;
 } */
+
+
+/* seven section */
+.collaboration-container {
+    width: 80%;
+    margin: auto;
+    
+}
+
+.collaboration-text , .double-imgs{
+    width: 48%;
+}
+
+.double-imgs {
+    position: relative;
+}
+
+.double-imgs img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.bottom-img , .top-img {
+    width: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.bottom-img {
+    position: absolute;
+    top: 25%;
+    right: 20%;
+}
+
+.collaboration-text p {
+    font-size: 14px;
+}
+
+.collaboration-text h3 {
+    font-size: 20px;
+    width: 80%;
+}
+
+.collaboration-text button {
+    font-size: 14px;
+    height: 6.5vh;
+}
+
+/* eigth section */
+.materials {
+    background-image: url(./imgs/materials-img.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 70vh;
+    width: 100%;
+    font-size: var(--small-font);
+}
+
+.materials a {
+    all: unset;
+    cursor: pointer;
+    color: var(--black-color);
+    position: relative;
+    padding: 5px;
+}
+
+.materials a::after {
+    content: '';
+    width: 90%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    background-color: var(--underline-color);
+    transition: .3s ease-in-out;
+}
+
+.materials a:hover::after {
+    width: 0;
+}
+
+/* ninth section */
+
+/* tenth section */
+.sale-section {
+    background-image: url(./imgs/sale-section-img.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 12vh);
+}
+
+.sale-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 25, 25, 0.226);
+    /* z-index: 1;  */
+}
+
+.sale-section-content {
+    width: 90%;
+    margin: auto;
+}
+
+.sale-section-text {
+    z-index:2;
+    width: 50%;
+}
+
+.sale-section-counter {
+    z-index:2;
+    width: 30%;
+}
+
+.sale-section-text p {
+    font-size: var(--small-font);
+    color: #efefef;
+}
+
+.sale-section-text h3 {
+    font-size: var(--title-size);
+}
+
+.sale-section-text button {
+    font-size: var(--small-font);
+}
+
+.sale-time p:first-of-type {
+    font-size: var(--title-size);
+}
+
+.sale-time-indicator {
+    font-size: var(--small-font);
+}
