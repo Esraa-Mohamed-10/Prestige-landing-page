@@ -278,11 +278,12 @@ header {
         width: 22rem;
     }
 
-    .slide-lenova .slide-content{
+    .slide-lenova .slide-content {
         width: 18rem;
     }
 
-    .hero , .hero .hero-swiper {
+    .hero,
+    .hero .hero-swiper {
         height: calc(100vh - 75px);
     }
 
@@ -551,6 +552,7 @@ header {
     background-image: url(./imgs/second-video-poster.webp);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     height: 100%;
 }
 
@@ -575,10 +577,14 @@ header {
     transform: scale(1.15);
 }
 
-@media(max-width:768px){
+@media(max-width:768px) {
     .play-div button {
-        font-size: 45px; 
+        font-size: 45px;
     }
+    .video-section ,.video-section video {
+        height: 50vh;
+    }
+    
 }
 
 /* seven section */
