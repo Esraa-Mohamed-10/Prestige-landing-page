@@ -113,6 +113,12 @@ header {
     font-size: 0.7rem;
 }
 
+@media(max-width:768px){
+    .time-indicator {
+        font-size: 0.6rem;
+    }
+}
+
 /* start navbar */
 .navbar {
     background-color: transparent !important;
@@ -120,7 +126,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 100;
     color: var(--text-color) !important;
     padding: 0 !important;
     height: 12vh !important;
