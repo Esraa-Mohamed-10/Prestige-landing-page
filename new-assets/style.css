@@ -270,6 +270,15 @@ header {
     .hero-slide90s .slide-content {
         width: 22rem;
     }
+
+    .slide-lenova .slide-content{
+        width: 18rem;
+    }
+
+    .hero , .hero .hero-swiper {
+        height: 70vh;
+    }
+
 }
 
 /* end header */
