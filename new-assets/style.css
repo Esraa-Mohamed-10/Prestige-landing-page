@@ -565,6 +565,12 @@ header {
     padding-left: 8px;
 }
 
+@media(max-width:768px){
+    .play-div button {
+        font-size: 60px; 
+    }
+}
+
 /* seven section */
 .collaboration-container {
     width: 80%;
