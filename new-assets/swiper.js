@@ -1,51 +1,98 @@
 
-var slideTimeout;
+// var slideTimeout;
 
-var swiper = new Swiper(".hero-swiper", {
-    loop: true,
-    autoplay: false,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    on: {
+// var swiper = new Swiper(".hero-swiper", {
+//     loop: true,
+//     autoplay: false,
+//     pagination: {
+//         el: ".swiper-pagination",
+//         clickable: true,
+//     },
+//     on: {
 
-        init: function () {
-            handleSlideChange();
+//         init: function () {
+//             handleSlideChange();
+//         },
+
+//         slideChange: function () {
+//             var videos = document.querySelectorAll(".hero-slide-video video");
+//             videos.forEach(function (video) {
+//                 video.pause();
+//             });
+//             clearTimeout(slideTimeout);
+//         },
+
+//         slideChangeTransitionEnd: function () {
+//             handleSlideChange();
+//         },
+//     },
+// });
+
+
+// function handleSlideChange() {
+//     var activeSlide = document.querySelector(".swiper-slide-active");
+//     var video = activeSlide.querySelector("video");
+
+//     if (video) {
+//         video.play();
+
+//         slideTimeout = setTimeout(() => {
+//             swiper.slideNext();
+//         }, 16000);
+//     } else {
+
+//         slideTimeout = setTimeout(() => {
+//             swiper.slideNext();
+//         }, 3000);
+//     }
+// }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var slideTimeout;
+
+    var swiper = new Swiper(".hero-swiper", {
+        loop: true,
+        autoplay: false,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
         },
-
-        slideChange: function () {
-            var videos = document.querySelectorAll(".hero-slide-video video");
-            videos.forEach(function (video) {
-                video.pause();
-            });
-            clearTimeout(slideTimeout);
+        on: {
+            init: function () {
+                handleSlideChange();
+            },
+            slideChange: function () {
+                var videos = document.querySelectorAll(".hero-slide-video video");
+                videos.forEach(function (video) {
+                    video.pause();
+                    video.currentTime = 0; // Reset video to the start
+                });
+                clearTimeout(slideTimeout);
+            },
+            slideChangeTransitionEnd: function () {
+                handleSlideChange();
+            },
         },
+    });
 
-        slideChangeTransitionEnd: function () {
-            handleSlideChange();
-        },
-    },
+    function handleSlideChange() {
+        var activeSlide = document.querySelector(".swiper-slide-active");
+        var video = activeSlide ? activeSlide.querySelector("video") : null;
+
+        if (video) {
+            video.play();
+            slideTimeout = setTimeout(() => {
+                swiper.slideNext();
+            }, 16000); // Play for 16 seconds
+        } else {
+            slideTimeout = setTimeout(() => {
+                swiper.slideNext();
+            }, 3000); // Change slide after 3 seconds
+        }
+    }
 });
 
-
-function handleSlideChange() {
-    var activeSlide = document.querySelector(".swiper-slide-active");
-    var video = activeSlide.querySelector("video");
-
-    if (video) {
-        video.play();
-
-        slideTimeout = setTimeout(() => {
-            swiper.slideNext();
-        }, 16000);
-    } else {
-
-        slideTimeout = setTimeout(() => {
-            swiper.slideNext();
-        }, 3000);
-    }
-}
 
 // var slideTimeout; // متغير لتخزين المؤقت
 

@@ -94,32 +94,32 @@ playButton.addEventListener("click", () => {
 //     });
 // };
 
-const leftProduct = document.querySelector('.split-left');
-        const rightProduct = document.querySelector('.split-right');
-        const gutter = document.querySelector('.gutter');
-        const splitProducts = document.querySelector('.split-products');
+// const leftProduct = document.querySelector('.split-left');
+//         const rightProduct = document.querySelector('.split-right');
+//         const gutter = document.querySelector('.gutter');
+//         const splitProducts = document.querySelector('.split-products');
 
-        let isDragging = false;
+//         let isDragging = false;
 
-        gutter.addEventListener('mousedown', function() {
-            isDragging = true;
-        });
+//         gutter.addEventListener('mousedown', function() {
+//             isDragging = true;
+//         });
 
-        document.addEventListener('mousemove', function(e) {
-            if (!isDragging) return;
+//         document.addEventListener('mousemove', function(e) {
+//             if (!isDragging) return;
             
-            const containerWidth = splitProducts.offsetWidth;
-            const offsetX = e.clientX - splitProducts.getBoundingClientRect().left;
-            const leftWidthPercent = (offsetX / containerWidth) * 100;
+//             const containerWidth = splitProducts.offsetWidth;
+//             const offsetX = e.clientX - splitProducts.getBoundingClientRect().left;
+//             const leftWidthPercent = (offsetX / containerWidth) * 100;
 
-            // تأكد من بقاء النسب بين 10% و 90%:
-            if (leftWidthPercent < 10 || leftWidthPercent > 90) return;
+//             // تأكد من بقاء النسب بين 10% و 90%:
+//             if (leftWidthPercent < 10 || leftWidthPercent > 90) return;
             
-            // تحديث تخطيط الشبكة بناءً على السحب:
-            splitProducts.style.gridTemplateColumns = `${leftWidthPercent}% 10px ${100 - leftWidthPercent}%`;
-        });
+//             // تحديث تخطيط الشبكة بناءً على السحب:
+//             splitProducts.style.gridTemplateColumns = `${leftWidthPercent}% 10px ${100 - leftWidthPercent}%`;
+//         });
 
-        document.addEventListener('mouseup', function() {
-            isDragging = false;
-        });
+//         document.addEventListener('mouseup', function() {
+//             isDragging = false;
+//         });
 
