@@ -44,6 +44,7 @@ body {
     background-size: 0% 100%;
     border: 1px solid var(--text-color);
     color: var(--text-color);
+    outline: none;
 }
 
 .black-button {
@@ -63,6 +64,7 @@ body {
     background-size: 0% 100%;
     border: 1px solid black;
     color: var(--black-color) !important;
+    outline: none;
 }
 
 .narrow-letter-space {
