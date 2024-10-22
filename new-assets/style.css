@@ -65,6 +65,10 @@ body {
     color: var(--black-color) !important;
 }
 
+.narrow-letter-space {
+    letter-spacing: 0.1rem !important;
+}
+
 /* end global style */
 
 
