@@ -110,8 +110,13 @@
 
 
 /* why choose us pagination */
+.why-choose-us-swipper {
+    position: relative; 
+    padding-bottom: 30px;
+}
+
 .why-choose-us-swipper .swiper-pagination {
-    bottom: 0; /* تعديل المسافة السفلية */
+    bottom: 5px; 
     position: absolute;
     left: 0;
     width: 100%;
