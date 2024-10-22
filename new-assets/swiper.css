@@ -93,7 +93,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 10; /* يجب أن يكون أقل من الصور ليظهر أسفلها */
+    z-index: 10; 
 }
 
 .discover-swipper .swiper-pagination-bullet {
@@ -117,7 +117,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 1000;
+    z-index: 10;
 }
 
 .why-choose-us-swipper .swiper-pagination-bullet {

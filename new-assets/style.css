@@ -276,7 +276,7 @@ header {
     }
 
     .hero , .hero .hero-swiper {
-        height: 88vh;
+        height: calc(100vh - 75px);
     }
 
 }
