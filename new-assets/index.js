@@ -1,13 +1,15 @@
 // navbar code
 const navbar = document.getElementById('nav');
 const logo = document.querySelector('.navbar-brand img');
+const navbarToggler = document.querySelector('.navbar-toggler'); 
+const navbarLinks = document.querySelectorAll('.nav-link');
 
 navbar.addEventListener('mouseenter', () => {
-    logo.src = 'new-assets/media/logo.webp'; // الصورة عند التحويم
+    logo.src = 'new-assets/media/logo.webp'; 
 });
 
 navbar.addEventListener('mouseleave', () => {
-    logo.src = 'new-assets/media/logo-white.png'; // الصورة الافتراضية
+    logo.src = 'new-assets/media/logo-white.png'; 
 });
 
 window.addEventListener('scroll', () => {
@@ -27,6 +29,22 @@ window.addEventListener('scroll', () => {
         logo.src = 'new-assets/media/logo-white.png'; // الصورة الافتراضية
         navbar.style.marginTop='75px';
         // استعادة الألوان الأصلية للروابط
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.style.setProperty('color', 'var(--text-color)', 'important');
+        });
+    }
+});
+
+
+// التأكد من ظهور زر التبديل بشكل صحيح
+navbarToggler.addEventListener('click', () => {
+    if (!navbarToggler.classList.contains('collapsed')) {
+        navbar.style.setProperty('background-color', 'white', 'important');
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.style.setProperty('color', 'black', 'important');
+        });
+    } else {
+        navbar.style.setProperty('background-color', 'transparent', 'important');
         document.querySelectorAll('.nav-link').forEach(link => {
             link.style.setProperty('color', 'var(--text-color)', 'important');
         });
@@ -56,17 +74,14 @@ prodCards.forEach(prodCard => {
 
 
 // video code
-// const video = document.getElementById('secondVideo');
-// const playButton = document.getElementById('playButton');
+const video = document.getElementById("secondVideo");
+const playButton = document.getElementById("playButton");
 
-// playButton.addEventListener('click', function() {
-//     // Hide the button
-//     playButton.style.display = 'none';
-//     // Show the video controls
-//     video.setAttribute('controls', 'controls');
-//     // Play the video
-//     video.play();
-// });
+playButton.addEventListener("click", () => {
+    video.controls = true; // إظهار الـ controls
+    video.play(); // تشغيل الفيديو
+    playButton.style.display = "none"; // إخفاء الزر بعد التشغيل
+});
 
 
 // split screen code

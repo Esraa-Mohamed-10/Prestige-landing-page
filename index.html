@@ -23,16 +23,22 @@
 
    <!-- swiper cdn -->
    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+   <!-- swiper css -->
+   <link rel="stylesheet" href="new-assets/swiper.css">
 
-   <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2"
-      href="https://cdn.shopify.com/static/fonts/ShopifySans--regular.woff2">
-   <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2"
-      href="https://cdn.shopify.com/static/fonts/ShopifySans--bold.woff2">
+   <!-- <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2"
+        href="https://cdn.shopify.com/static/fonts/ShopifySans--regular.woff2">
+    <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2"
+        href="https://cdn.shopify.com/static/fonts/ShopifySans--bold.woff2"> -->
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
 
    <script src="https://unpkg.com/split-grid/dist/split-grid.js"></script>
+
+   <!-- AOS CDN -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 
 <body class="rtl">
@@ -40,26 +46,26 @@
    <header>
       <!-- div for sale count down -->
       <div class="sale text-white text-uppercase">
-         <div class="container-fluid d-flex justify-content-between align-items-center">
+         <div class="container-fluid d-flex justify-content-between align-items-center px-4">
             <div class="anouncament mb-0"> <span>Super Sale up to 40%</span> <a href=""
-                  class="d-inline-block ml-3 h6 link sm-max:hidden">Shop Now</a></div>
-            <div class="count-down text-white d-flex align-items-center">
-               <div class="time mr-3 text-center">
+                  class="ml-3 h6 link shop-now">Shop Now</a></div>
+            <div class="count-down text-white d-flex align-items-center justify-content-end">
+               <div class="time mr-sm-2 mr-lg-3 text-center">
                   <p class="mb-0">36</p>
                   <p class="mb-0 time-indicator">Day</p>
                </div>
-               <div class="mr-3">:</div>
-               <div class="time mr-3 text-center">
+               <div class="mr-sm-2 mr-lg-3">:</div>
+               <div class="time mr-sm-2 mr-lg-3 text-center">
                   <p class="mb-0">21</p>
                   <p class="mb-0 time-indicator">Hrs</p>
                </div>
-               <div class="mr-3">:</div>
-               <div class="time mr-3 text-center">
+               <div class="mr-sm-2 mr-lg-3">:</div>
+               <div class="time mr-sm-2 mr-lg-3 text-center">
                   <p class="mb-0">11</p>
                   <p class="mb-0 time-indicator">Min</p>
                </div>
-               <div class="mr-3">:</div>
-               <div class="time mr-3 text-center">
+               <div class="mr-sm-2 mr-lg-3">:</div>
+               <div class="time text-center">
                   <p class="mb-0">49</p>
                   <p class="mb-0 time-indicator">Sec</p>
                </div>
@@ -141,22 +147,56 @@
 
       <!-- hero section -->
       <section class="hero">
-         <div class="hero-swiper">
+         <div class="hero-swiper swiper">
+            <div class="swiper-wrapper">
 
-            <!-- Slide 2 (Image) -->
-            <div class="swiper-slide">
-               <!-- <div class="img-slide"> -->
-               <img src="new-assets/media/hero-img.webp" alt="Image Slide" />
-               <!-- </div> -->
-               <div class="slide-content">
-                  <p>New Collection</p>
-                  <h2 class="text-uppercase my-4">Inspired by th 90s</h2>
-                  <button class="white-button">Learn More</button>
+               <!-- Slide 1 (video) -->
+               <div class="swiper-slide hero-slide-video">
+
+                  <video autoplay muted>
+                     <source src="new-assets/video/hero-video.mp4">
+                     Your browser does not support the video type.
+                  </video>
+
+                  <div class="slide-content">
+                     <p class="text-uppercase">new collection</p>
+                     <h2 class="text-uppercase my-3">beauties</h2>
+                     <div class="slide1-btns d-flex justify-content-between">
+
+                        <button class="white-button text-uppercase">Women</button>
+                        <button class="black-button text-uppercase">men</button>
+                     </div>
+                  </div>
                </div>
+
+               <!-- Slide 2 (Image) -->
+               <div class="swiper-slide slide-lenova">
+                  <!-- <div class="img-slide"> -->
+                  <img src="new-assets/imgs/hero-img.webp" alt="Image Slide" />
+                  <!-- </div> -->
+                  <div class="slide-content">
+                     <p class="text-uppercase">le nova</p>
+                     <h2 class="text-uppercase my-3">elegant & timeless</h2>
+                     <button class="white-button">view collection</button>
+                  </div>
+               </div>
+
+               <!-- Slide 3 (Image) -->
+               <div class="swiper-slide hero-slide90s">
+                  <!-- <div class="img-slide"> -->
+                  <img src="new-assets/imgs/hero-img2.webp" alt="Image Slide" class="hero-slide-img-2" />
+                  <!-- </div> -->
+                  <div class="slide-content">
+                     <p class="text-uppercase">Le Sac Baguette</p>
+                     <h2 class="text-uppercase my-4">Inspired by the 90s</h2>
+                     <button class="white-button">Learn More</button>
+                  </div>
+               </div>
+
+
             </div>
-
             <!-- Add Pagination -->
-
+            <div class="swiper-pagination"></div>
          </div>
       </section>
    </header>
@@ -168,31 +208,41 @@
          <p class="mr-5">Men</p>
       </div>
       <div class="container-fluid">
-         <div class="row">
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
+         <div class="swiper main-product-swiper">
+            <div class="swiper-wrapper">
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/greenBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
             </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/greenBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
          </div>
 
          <div class="featured-button my-5">
@@ -203,10 +253,10 @@
 
    <!-- third section -->
    <section class="new-product-section">
-      <div class="container-fluid d-flex flex-column justify-content-end">
-         <div class="text-uppercase  text">
+      <div class="container-fluid d-flex flex-column">
+         <div class="text-uppercase text">
             <p>New Product</p>
-            <h3 class="my-4">Le backpack</h3>
+            <h3 class="my-md-4">Le backpack</h3>
             <button class="white-button">Shop</button>
          </div>
       </div>
@@ -216,13 +266,13 @@
    <section class="categories py-5">
       <div class="container-fluid">
          <div class="row">
-            <div class="col-8 position-relative women">
+            <div class="col-md-8 col-sm-12 position-relative women">
                <div class="img-container">
                   <img src="new-assets/imgs/categories-women.webp" alt="categories-women" class="h-100 w-100">
                </div>
                <p class="text-overlay">WOMEN</p>
             </div>
-            <div class="col-4">
+            <div class="col-md-4 col-sm-12">
                <div class="row">
                   <div class="col-12 position-relative men">
                      <div class="img-container">
@@ -246,35 +296,45 @@
    <!-- fifth section -->
    <section class="pb-4 text-uppercase">
       <div class="weekend mb-3 text-center">
-         <p class="mr-5">Le weekend bag</p>
-         <p class="mr-5">Ideal for a weekend outing</p>
+         <p class="mr-sm-0 mr-md-5">Le weekend bag</p>
+         <p class="mr-sm-0 mr-md-5">Ideal for a weekend outing</p>
       </div>
       <div class="container-fluid">
-         <div class="row">
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
+         <div class="swiper featured-prod-swipper">
+            <div class="swiper-wrapper">
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/greenBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
             </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/greenBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
          </div>
 
       </div>
@@ -282,20 +342,24 @@
 
    <!-- sixth section -->
    <section class="video-section">
-      <!-- <div id="videoContainer"> -->
-      <video id="secondVideo" controls>
+      <div id="videoContainer">
+      <video id="secondVideo">
          <source src="new-assets/video/second-video.mp4" type="video/mp4">
-         Your browser does not support the video tag.
+         Your browser does not support the video type.
       </video>
-      <!-- <button id="playButton">Play Video</button> -->
-      <!-- </div> -->
+      <div class="play-div" id="playButton">
+         <p class="text-uppercase">made in italy</p>
+         <h3 class="text-uppercase">finest handmade</h3>
+         <button>&#9658;</button>
+      </div>
+      </div>
    </section>
 
    <!-- seventh section -->
-   <section class="p-5 mb-5">
+   <section class="p-md-5 mb-md-5 pt-5">
       <div class="container-fluid">
-         <div class="d-flex collaboration-container align-items-center pb-5">
-            <div class="double-imgs">
+         <div class="d-md-flex d-block collaboration-container align-items-center pb-5">
+            <div class="double-imgs mb-5 pb-5 mb-md-0 pb-md-0">
                <div class="top-img">
                   <img src="new-assets/imgs/double-img.webp" alt="" class="w-100">
                </div>
@@ -307,7 +371,8 @@
             <div class="collaboration-text">
                <p class="text-uppercase">collaboration</p>
                <h3 class="text-uppercase">léo et violette x wendy swan</h3>
-               <p class="my-4">Dalia was born from the encounter between Wendy and Léo et Violette. Wendy's minimalist
+               <p class="my-4">Dalia was born from the encounter between Wendy and Léo et Violette. Wendy's
+                  minimalist
                   and elegant
                   universe corresponds perfectly to the spirit of Léo et Violette. </p>
                <button class="black-button">Discover</button>
@@ -331,31 +396,41 @@
          <p>Best Seller</p>
       </div>
       <div class="container-fluid">
-         <div class="row">
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
+         <div class="swiper best-seller-swiper">
+            <div class="swiper-wrapper">
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/greenBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
             </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/greenBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
          </div>
 
       </div>
@@ -363,12 +438,15 @@
 
    <!-- tenth section -->
    <section class="sale-section d-flex flex-column justify-content-center">
-      <div class="container-fluid px-5">
-         <div class="d-flex sale-section-content align-items-center justify-content-between px-5">
-            <div class="sale-section-text text-white">
+      <div class="container-fluid px-md-5">
+         <div
+            class="d-md-flex sale-section-content align-items-center justify-content-center justify-content-md-between px-md-5">
+            <div
+               class="sale-section-text text-white d-flex flex-column align-items-center align-items-md-start mb-3 mb-md-0">
                <p class="text-uppercase">limited time only</p>
                <h3 class="my-4 text-uppercase font">super sale up to 40% off</h3>
-               <p class="mb-4">Shop our selection of exclusive handbags and backpacks at reduced price during the Super
+               <p class="mb-4">Shop our selection of exclusive handbags and backpacks at reduced price during the
+                  Super
                   Sale. Hurry up!</p>
                <button class="white-button text-uppercase">shop now</button>
             </div>
@@ -403,50 +481,59 @@
    </section>
 
    <!-- eleventh section -->
-   <section class="discover p-5">
+   <section class="discover px-4 py-5 px-md-5">
       <div class="container-fluid text-center">
          <h3 class="text-uppercase">discover our products</h3>
          <p class="text-capitalize my-4">varied collection of bags fit your needs</p>
 
-         <div class="row text-white">
-            <div class="col discover-card">
-               <div class="discover-card-img">
-                  <img src="new-assets/imgs/discover1.avif" alt="">
+         <div class="swiper discover-swipper">
+            <div class="swiper-wrapper ">
+               <div class="text-center swiper-slide discover-card">
+                  <div class="discover-card-img">
+                     <img src="new-assets/imgs/discover1.avif" alt="">
+                  </div>
+                  <p>Bags</p>
                </div>
-               <p>Bags</p>
-            </div>
-            <div class="col discover-card">
-               <div class="discover-card-img">
-                  <img src="new-assets/imgs/discover2.avif" alt="">
+               <div class="text-center swiper-slide discover-card">
+                  <div class="discover-card-img">
+                     <img src="new-assets/imgs/discover2.avif" alt="">
+                  </div>
+                  <p>Weekend Bags</p>
                </div>
-               <p>Weekend Bags</p>
-            </div>
-            <div class="col discover-card">
-               <div class="discover-card-img">
-                  <img src="new-assets/imgs/discover3.avif" alt="">
-               </div>
-               <p>Leather Bags</p>
-            </div>
-            <div class="col discover-card">
-               <div class="discover-card-img">
-                  <img src="new-assets/imgs/discover4.avif" alt="">
-               </div>
-               <p>Bags</p>
-            </div>
-            <div class="col discover-card">
-               <div class="discover-card-img">
-                  <img src="new-assets/imgs/discover5.webp" alt="">
-               </div>
-               <p>University Bags</p>
-            </div>
-            <div class="col discover-card">
-               <div class="discover-card-img">
-                  <img src="new-assets/imgs/discover6.webp" alt="">
-               </div>
-               <p>Work Bags</p>
-            </div>
 
+               <div class="text-center swiper-slide discover-card">
+                  <div class="discover-card-img">
+                     <img src="new-assets/imgs/discover3.avif" alt="">
+                  </div>
+                  <p>Leather Bags</p>
+               </div>
+
+               <div class="text-center swiper-slide discover-card">
+                  <div class="discover-card-img">
+                     <img src="new-assets/imgs/discover4.avif" alt="">
+                  </div>
+                  <p>Bags</p>
+               </div>
+
+               <div class="text-center swiper-slide discover-card">
+                  <div class="discover-card-img">
+                     <img src="new-assets/imgs/discover5.webp" alt="">
+                  </div>
+                  <p>University Bags</p>
+               </div>
+
+               <div class="text-center swiper-slide discover-card">
+                  <div class="discover-card-img">
+                     <img src="new-assets/imgs/discover6.webp" alt="">
+                  </div>
+                  <p>Work Bags</p>
+               </div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
          </div>
+
       </div>
    </section>
 
@@ -456,38 +543,48 @@
          <p>Latest Products</p>
       </div>
       <div class="container-fluid">
-         <div class="row">
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
+         <div class="swiper latest-prod-swiper">
+            <div class="swiper-wrapper">
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/greenBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
+               <div class="text-center prod-card swiper-slide">
+                  <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
+                  <h6>Lorem ipsum dolor sit amet consectetur.</h6>
+                  <p>380$</p>
+                  <button class="add-button">+</button>
+               </div>
             </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/greenBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
-            <div class="col text-center prod-card">
-               <div class="prod-img"><img src="new-assets/brownBag.avif" alt="" class="main-img"></div>
-               <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-               <p>380$</p>
-               <button class="add-button">+</button>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
          </div>
 
       </div>
    </section>
 
    <!-- thirteen section -->
-   <section class="split-screen">
+   <!-- <section class="split-screen">
       <div class="container-fluid spit-container">
          <div class="split-text text-center">
             <h3>Le Dalia</h3>
@@ -504,40 +601,40 @@
             </div>
          </div>
       </div>
-   </section>
+   </section> -->
 
    <!-- fourteen -->
 
    <!-- fifteen -->
    <section class="benefits py-5">
       <div class="container-fluid">
-         <div class="row">
-
-            <div class="col text-center">
-               <i class="fas fa-truck"></i>
-               <h5 class="my-3">Express delivery</h5>
-               <p>DHL express delivery worldwide</p>
+         <div class="swiper why-choose-us-swipper">
+            <div class="swiper-wrapper ">
+               <div class="text-center swiper-slide">
+                  <i class="fas fa-truck"></i>
+                  <h5 class="my-3">Express delivery</h5>
+                  <p>DHL express delivery worldwide</p>
+               </div>
+               <div class="text-center swiper-slide">
+                  <i class="fas fa-undo-alt"></i>
+                  <h5 class="my-3">Free Return</h5>
+                  <p>Free return for 30 days for any order delivered in France</p>
+               </div>
+               <div class="text-center swiper-slide">
+                  <i class="far fa-comments"></i>
+                  <h5 class="my-3">Available customer service</h5>
+                  <p>Available via Whatsapp on +33123456789</p>
+               </div>
+               <div class="text-center swiper-slide">
+                  <i class="fas fa-money-check-alt"></i>
+                  <h5 class="my-3">Payment in 3x</h5>
+                  <p>Take advantage of a payment in 3x without fees from $100 of purchase</p>
+               </div>
             </div>
-            <div class="col text-center">
-               <i class="fas fa-undo-alt"></i>
-               <h5 class="my-3">Free Return</h5>
-               <p>Free return for 30 days for any order delivered in France</p>
-            </div>
-
-            <div class="col text-center">
-               <i class="far fa-comments"></i>
-               <h5 class="my-3">Available customer service</h5>
-               <p>Available via Whatsapp on +33123456789</p>
-            </div>
-
-            <div class="col text-center">
-               <i class="fas fa-money-check-alt"></i>
-               <h5 class="my-3">Payment in 3x</h5>
-               <p>Take advantage of a payment in 3x without fees from $100 of purchase</p>
-            </div>
-
-
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
          </div>
+
       </div>
    </section>
 
@@ -550,7 +647,7 @@
             <p class="text-capitalize my-3">frequently asked questions</p>
          </div>
 
-         <div class="accordion px-5" id="accordionExample" >
+         <div class="accordion px-5" id="accordionExample">
             <div class="card">
                <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
@@ -561,14 +658,19 @@
                   </h5>
                </div>
 
-               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+               <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
-                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                     squid. 3
+                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                     laborum
+                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                     nulla
                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                     beer
+                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                     accusamus
                      labore sustainable VHS.
                   </div>
                </div>
@@ -577,20 +679,25 @@
             <div class="card">
                <div class="card-header" id="headingTwo">
                   <h5 class="mb-0">
-                     <button class="faq-btn collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                     <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">
                         How do I care for and clean my leather bag?
                      </button>
                   </h5>
                </div>
                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                     squid. 3
+                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                     laborum
+                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                     nulla
                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                     beer
+                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                     accusamus
                      labore sustainable VHS.
                   </div>
                </div>
@@ -599,40 +706,48 @@
             <div class="card">
                <div class="card-header" id="headingThree">
                   <h5 class="mb-0">
-                     <button class="faq-btn collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                     <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">
                         How long does shipping usually take?
                      </button>
                   </h5>
                </div>
                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                     squid. 3
+                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                     laborum
+                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                     nulla
                      assumenda shoreditch et.
                   </div>
                </div>
             </div>
 
-            
+
             <div class="card">
                <div class="card-header" id="headingfour">
                   <h5 class="mb-0">
-                     <button class="faq-btn collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                     <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapsefour"
+                        aria-expanded="false" aria-controls="collapsefour">
                         Do you offer customization or personalization options for your leather bags?
                      </button>
                   </h5>
                </div>
                <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
                   <div class="card-body">
-                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                     squid. 3
+                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                     laborum
+                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                     nulla
                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                     beer
+                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                     accusamus
                      labore sustainable VHS.
                   </div>
                </div>
@@ -641,20 +756,25 @@
             <div class="card">
                <div class="card-header" id="headingFive">
                   <h5 class="mb-0">
-                     <button class="faq-btn collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                     <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFive"
+                        aria-expanded="false" aria-controls="collapseFive">
                         What is your return and exchange policy?
                      </button>
                   </h5>
                </div>
                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                   <div class="card-body">
-                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                     squid. 3
+                     wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                     laborum
+                     eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                     nulla
                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                     nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                     beer
+                     farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                     accusamus
                      labore sustainable VHS.
                   </div>
                </div>
@@ -665,19 +785,27 @@
       </div>
    </section>
 
+
+
    <script src="assets/jquery-3.6.0.min.js?v=1.0.0"></script>
    <script src="assets/jquery-ui.min.js"></script>
    <script src="assets/bootstrap.min.js"></script>
    <!-- script file -->
    <script src="new-assets/index.js"></script>
 
+
    <!-- swiper js cdn -->
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script src="new-assets/swiper.js"></script>
 
 
    <!-- split js cdn -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
    <script src="https://unpkg.com/split-grid/dist/split-grid.js"></script>
+
+   <!-- aos -->
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
 </body>
 
 </html>

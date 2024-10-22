@@ -1,0 +1,133 @@
+/* hero swiper style */
+.hero-slide-video video {
+    overflow-wrap: anywhere;
+    object-fit: cover;
+    object-position: center;
+    min-width: 100%;
+}
+
+@media(max-width:786px) {
+    .hero-slide-video video {
+        height: 100%;
+        object-fit: cover;
+    }   
+}
+
+.hero-slide-img-2 {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.hero-swiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+/* animation */
+/* .slide-content {
+    opacity: 0;
+    transform: translateY(100%); 
+    transition: all 0.5s ease-in-out;
+}
+
+.slide-content .show {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.slide-content .hide {
+    opacity: 0;
+    transform: translateY(100%); 
+} */
+
+/* arrows style */
+.swiper-button-prev , .swiper-button-next , .swiper-button-disabled{
+    width: 35px; 
+    height: 35px; 
+    background-color: #fcfcfc; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(17, 17, 17); 
+    /* opacity: 0;  */
+    transition: transform 0.3s ease;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    font-size: 16px; 
+    transform: scale(0.8); 
+}
+
+.swiper-button-prev:hover {
+    transform: translate(-5px, 0); 
+}
+
+.swiper-button-next:hover {
+    transform: translate(5px, 0); 
+}
+
+
+.swiper-button-disabled {
+    display: none;
+}
+
+/* discover pagination */
+.discover-swipper {
+    position: relative; /* تأكد من أن الـ swiper بأكمله له position relative */
+    padding-bottom: 30px; /* مساحة كافية لعرض النقاط أسفل الصور */
+}
+
+.discover-swipper .swiper-pagination {
+    bottom: 5px; /* تعديل المسافة السفلية */
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10; /* يجب أن يكون أقل من الصور ليظهر أسفلها */
+}
+
+.discover-swipper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.discover-swipper .swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+
+/* why choose us pagination */
+.why-choose-us-swipper .swiper-pagination {
+    bottom: 0; /* تعديل المسافة السفلية */
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.why-choose-us-swipper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.why-choose-us-swipper .swiper-pagination-bullet-active {
+    background: #fff;
+}
