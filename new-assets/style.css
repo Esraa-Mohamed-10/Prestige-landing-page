@@ -548,12 +548,15 @@ header {
     align-items: center;
     width: 100%;
     text-align: center;
+    background-image: url(./imgs/second-video-poster.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
 }
 
 
 .play-div button {
     all: unset;
-    /* background: rgba(255, 255, 255, 1); */
     height: 60px;
     width: 60px;
     border-radius: 50%;
@@ -566,6 +569,10 @@ header {
     justify-content: center;
     align-items: center;
     padding-left: 8px;
+}
+
+.play-div button:hover {
+    transform: scale(1.15);
 }
 
 @media(max-width:768px){
