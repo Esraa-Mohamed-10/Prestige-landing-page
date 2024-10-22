@@ -581,10 +581,12 @@ header {
     .play-div button {
         font-size: 45px;
     }
-    .video-section ,.video-section video {
+
+    .video-section,
+    .video-section video {
         height: 50vh;
     }
-    
+
 }
 
 /* seven section */
@@ -645,6 +647,20 @@ header {
 
     .collaboration-container {
         padding: 0 20px;
+    }
+
+    .bottom-img,
+    .top-img {
+        width: 65%;
+    }
+
+    .bottom-img {
+        top: 25%;
+        right: 5%;
+
+    }
+    .double-imgs {
+        margin-bottom: 5rem !important;
     }
 
 }
