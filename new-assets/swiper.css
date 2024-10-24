@@ -4,14 +4,15 @@
     object-fit: cover;
     object-position: center;
     min-width: 100%;
+    height: 100%;
 }
 
-@media(max-width:786px) {
+/* @media(max-width:786px) {
     .hero-slide-video video {
         height: 100%;
         object-fit: cover;
     }   
-}
+} */
 
 .hero-slide-img-2 {
     width: 100%;
@@ -135,4 +136,135 @@
 
 .why-choose-us-swipper .swiper-pagination-bullet-active {
     background: #fff;
+}
+
+/* mouse wheel style */
+.mouse-wheel-section {
+    height: 88vh;
+    background-image: url(./imgs/mouse-wheel-background.webp);
+    position: relative;
+}
+
+.mouse-wheel-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 25, 25, 0.199);
+    z-index: 1;
+}
+
+.mouse-wheel-swipper {
+    height: 100%;
+}
+
+.mouse-wheel-swipper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+.wheel-text {
+    width: 25%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wheel-number {
+    margin: 0;
+}
+
+.wheel-text h3 {
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+.wheel-text p {
+    font-size: 12px;
+}
+
+.wheel-text a {
+    all: unset;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 2px;
+    width: fit-content;
+    margin: auto;
+}
+
+.wheel-text a::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: .3s ease-in-out;
+}
+
+.wheel-text a:hover::after {
+    width: 0;
+}
+
+.wheel-img {
+    height: 80vh;
+    width: 35%;
+    overflow: hidden;
+}
+
+.wheel-img img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+
+@media(max-width:992px){
+    .mouse-wheel-swipper .swiper-slide {
+        gap: 0;
+    }
+    .wheel-img{
+        width: 45%;
+        height: 60vh;
+    }
+
+    .wheel-text {
+        width: 45%;
+        height: fit-content;
+    }
+
+    .wheel-img img {
+        object-fit: contain;
+    }
+
+}
+@media(max-width:768px){
+    .mouse-wheel-swipper .swiper-slide {
+        flex-direction: column;
+        margin: 0.3rem 0;
+        gap: 2%;
+    }
+
+    .wheel-text , .wheel-img{
+        width: 60%;
+        height: 40vh;
+    }
+
+    .wheel-img img {
+        object-fit: contain;
+    }
+
 }

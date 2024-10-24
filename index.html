@@ -28,10 +28,6 @@
    <!-- swiper css -->
    <link rel="stylesheet" href="new-assets/swiper.css">
 
-   <!-- <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2"
-        href="https://cdn.shopify.com/static/fonts/ShopifySans--regular.woff2">
-    <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2"
-        href="https://cdn.shopify.com/static/fonts/ShopifySans--bold.woff2"> -->
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
 
@@ -74,76 +70,55 @@
       </div>
 
       <!-- navbar -->
-      <nav class="navbar navbar-expand-lg text-uppercase" id="nav">
-         <div class="container-fluid">
-            <!-- button on small screens -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-               <!-- ul for navbar on large screens -->
-               <ul class="navbar-nav">
-                  <li class="nav-item dropdown mr-3">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button">
-                        Women
-                     </a>
-                     <div class="dropdown-menu-large">
-                        <!-- <div class="row">
-                           <div class="col-md-4 dropdown-column">
-                              <h6>Bags</h6>
-                              <ul class="list-unstyled">
-                                 <li><a href="#">Shoulder bags</a></li>
-                                 <li><a href="#">Mini bags</a></li>
-                                 <li><a href="#">Business bags</a></li>
-                                 <li><a href="#">Small leather goods</a></li>
-                                 <li><a href="#">All products</a></li>
-                              </ul>
-                           </div>
-                           <div class="col-md-4 dropdown-column">
-                              <h6>Popular Models</h6>
-                              <ul class="list-unstyled">
-                                 <li><a href="#">Le Mini Dalia</a></li>
-                                 <li><a href="#">Le Nova</a></li>
-                                 <li><a href="#">Le Dino</a></li>
-                                 <li><a href="#">Le Gina</a></li>
-                              </ul>
-                           </div>
-                           <div class="col-md-4 dropdown-column">
-                              <h6>Popular Colors</h6>
-                              <ul class="list-unstyled">
-                                 <li><a href="#">Black</a></li>
-                                 <li><a href="#">Camel</a></li>
-                                 <li><a href="#">Almond Green</a></li>
-                                 <li><a href="#">Ivory</a></li>
-                              </ul>
-                           </div>
-                        </div> -->
-                     </div>
-                  </li>
-                  <li class="nav-item mr-3">
-                     <a class="nav-link" href="#">Men</a>
-                  </li>
-                  <li class="nav-item mr-3">
-                     <a class="nav-link" href="#">About</a>
-                  </li>
-                  <li class="nav-item mr-3">
-                     <a class="nav-link" href="#">Blog</a>
-                  </li>
-               </ul>
+      <nav class="custom-nav" id="nav">
 
+         <div class="container-fluid d-flex align-items-center justify-content-between px-4 ">
+            <!-- first div for pages -->
+            <div class="d-none d-lg-flex nav-pages justify-content-between text-uppercase text-white">
+               <a href="" class="nav-page">women</a>
+               <a href="" class="nav-page">men</a>
+               <a href="" class="nav-page">about</a>
+               <a href="" class="nav-page">blog</a>
+               <a href="" class="nav-page">theme features</a>
             </div>
-            <a class="navbar-brand" href="#"><img src="new-assets/media/logo-white.png" alt="logo"></a>
 
-            <ul class="navbar-nav">
-               <li class="nav-item"><button><i class="far fa-user"></i></button></li>
-               <li class="nav-item"><button><i class="fas fa-search"></i></button></li>
-               <li class="nav-item"><button><i class="fas fa-shopping-bag"></i></button></li>
-            </ul>
+            <!-- menu button for small screens -->
+            <div class="menu-btn d-lg-none" id="open-sideNav"><i class="fas fa-bars"></i></div>
 
+            <!-- second div for logo -->
+            <div class="nav-logo">
+               <a class="navbar-logo" href="#"><img src="new-assets/media/logo-white.png" alt="logo" id="logo"></a>
+            </div>
 
+            <!-- third div for icons -->
+            <div class="nav-actions d-flex justify-content-end">
+               <button><i class="far fa-user"></i></button>
+               <button id="search-btn"><i class="fas fa-search"></i></button>
+               <button><i class="fas fa-shopping-bag"></i></button>
+            </div>
+         </div>
+
+         <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" id="close-sideNav">&times;</a>
+            <a href="">women</a>
+            <a href="">men</a>
+            <a href="">about</a>
+            <a href="">blog</a>
+            <a href="">theme features</a>
          </div>
       </nav>
+
+      <!-- actions on navbar -->
+      <!-- search div -->
+      <div class="search-div d-none">
+         <div class="d-flex">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="seacrh for..." class="nav-search">
+         </div>
+         <div>
+            <button id="close-search"><i class="fas fa-times"></i></button>
+         </div>
+      </div>
 
       <!-- hero section -->
       <section class="hero">
@@ -343,20 +318,20 @@
    <!-- sixth section -->
    <section class="video-section">
       <div id="videoContainer">
-      <video id="secondVideo">
-         <source src="new-assets/video/second-video.mp4" type="video/mp4">
-         Your browser does not support the video type.
-      </video>
-      <div class="play-div" id="playButton">
-         <p class="text-uppercase">made in italy</p>
-         <h3 class="text-uppercase my-2 mb-md-4">finest handmade</h3>
-         <button><i class="fas fa-play-circle"></i></button>
-      </div>
+         <video id="secondVideo">
+            <source src="new-assets/video/second-video.mp4" type="video/mp4">
+            Your browser does not support the video type.
+         </video>
+         <div class="play-div" id="playButton">
+            <p class="text-uppercase">made in italy</p>
+            <h3 class="text-uppercase my-2 mb-md-4">finest handmade</h3>
+            <button><i class="fas fa-play-circle"></i></button>
+         </div>
       </div>
    </section>
 
    <!-- seventh section -->
-   <section class="p-md-5 mb-md-5 pt-5">
+   <section class="p-md-5 mb-lg-5 pt-5">
       <div class="container-fluid">
          <div class="d-md-flex d-block collaboration-container align-items-center pb-5">
             <div class="double-imgs mb-5 pb-5 mb-md-0 pb-md-0">
@@ -371,7 +346,8 @@
             <div class="collaboration-text">
                <p class="text-uppercase">collaboration</p>
                <h3 class="text-uppercase">léo et violette x wendy swan</h3>
-               <p class="my-4 narrow-letter-space">Dalia was born from the encounter between Wendy and Léo et Violette. Wendy's
+               <p class="my-4 narrow-letter-space">Dalia was born from the encounter between Wendy and Léo et Violette.
+                  Wendy's
                   minimalist
                   and elegant
                   universe corresponds perfectly to the spirit of Léo et Violette. </p>
@@ -385,7 +361,8 @@
    <section class="materials d-flex align-items-center justify-content-center flex-column">
       <div class="materials-text bg-white w-25 text-center p-4">
          <p class="text-uppercase">materials</p>
-         <p class="narrow-letter-space">We only work with the best leather, chosen in collaboration with our factory. Made in Italy.</p>
+         <p class="narrow-letter-space">We only work with the best leather, chosen in collaboration with our factory.
+            Made in Italy.</p>
          <a href="">Learn More</a>
       </div>
    </section>
@@ -438,43 +415,43 @@
 
    <!-- tenth section -->
    <section class="sale-section d-flex flex-column justify-content-center">
-      <div class="container-fluid px-md-5">
+      <div class="container-fluid px-lg-5">
          <div
-            class="d-md-flex sale-section-content align-items-center justify-content-center justify-content-md-between px-md-5">
+            class="d-lg-flex sale-section-content align-items-center justify-content-center justify-content-lg-between px-lg-5">
             <div
-               class="sale-section-text text-white d-flex flex-column align-items-center align-items-md-start mb-3 mb-md-0">
+               class="sale-section-text text-white d-flex flex-column align-items-center align-items-lg-start mb-3 mb-lg-0">
                <p class="text-uppercase">limited time only</p>
                <h3 class="my-4 text-uppercase font">super sale up to 40% off</h3>
-               <p class="mb-4 narrow-letter-space">Shop our selection of exclusive handbags and backpacks at reduced price during the
+               <p class="mb-4 narrow-letter-space">Shop our selection of exclusive handbags and backpacks at reduced
+                  price during the
                   Super
                   Sale. Hurry up!</p>
                <button class="white-button text-uppercase">shop now</button>
             </div>
 
             <div class="sale-section-counter">
-               <div class="container-fluid">
-                  <div class="count-down text-white d-flex align-items-center">
-                     <div class="sale-time mr-3 text-center">
-                        <p class="mb-0">36</p>
-                        <p class="mb-0 sale-time-indicator">Day</p>
-                     </div>
-                     <div class="mr-3">:</div>
-                     <div class="sale-time mr-3 text-center">
-                        <p class="mb-0">21</p>
-                        <p class="mb-0 sale-time-indicator">Hrs</p>
-                     </div>
-                     <div class="mr-3">:</div>
-                     <div class="sale-time mr-3 text-center">
-                        <p class="mb-0">11</p>
-                        <p class="mb-0 sale-time-indicator">Min</p>
-                     </div>
-                     <div class="mr-3">:</div>
-                     <div class="sale-time mr-3 text-center">
-                        <p class="mb-0">49</p>
-                        <p class="mb-0 sale-time-indicator">Sec</p>
-                     </div>
+               <div class="count-down text-white d-flex align-items-center">
+                  <div class="sale-time mr-3 text-center">
+                     <p class="mb-0">36</p>
+                     <p class="mb-0 sale-time-indicator">Day</p>
+                  </div>
+                  <div class="mr-3">:</div>
+                  <div class="sale-time mr-3 text-center">
+                     <p class="mb-0">21</p>
+                     <p class="mb-0 sale-time-indicator">Hrs</p>
+                  </div>
+                  <div class="mr-3">:</div>
+                  <div class="sale-time mr-3 text-center">
+                     <p class="mb-0">11</p>
+                     <p class="mb-0 sale-time-indicator">Min</p>
+                  </div>
+                  <div class="mr-3">:</div>
+                  <div class="sale-time mr-3 text-center">
+                     <p class="mb-0">49</p>
+                     <p class="mb-0 sale-time-indicator">Sec</p>
                   </div>
                </div>
+
             </div>
          </div>
       </div>
@@ -583,30 +560,71 @@
       </div>
    </section>
 
-   <!-- thirteen section -->
-   <!-- <section class="split-screen">
-      <div class="container-fluid spit-container">
-         <div class="split-text text-center">
-            <h3>Le Dalia</h3>
-            <p>Choose your colour</p>
-         </div>
-
-         <div class="split-products">
-            <div class="split-product split-left">
-               <div><img src="new-assets/imgs/split-left.webp" alt=""></div>
+   <!-- thirteen section split -->
+   <section class="screen-split-section">
+      <div class="split-view">
+         <div class="panel bottom-split-img">
+            <div class="split-img-container">
+               <img src="new-assets/imgs/split-right.webp" alt="grey">
             </div>
-            <div class="gutter"></div>
-            <div class="split-product split-right">
-               <div><img src="new-assets/imgs/split-right.webp" alt=""></div>
+            <div class="bottom-content split-text">
+               <p class="text-uppercase">almond green liege</p>
+               <a href="">View product</a>
+            </div>
+         </div>
+         <div class="panel top-split-img">
+            <div class="split-img-container">
+               <img src="new-assets/imgs/split-left.webp" alt="green">
+               <div class="top-content split-text">
+                  <p class="text-uppercase">blue denim liege</p>
+                  <a href="">View product</a>
+               </div>
+            </div>
+         </div>
+         <div class="handle">
+            <div class="drag-btn"><span class="left-arrow">&lt;</span>
+               <span class="right-arrow">&gt;</span>
             </div>
          </div>
       </div>
-   </section> -->
+   </section>
 
    <!-- fourteen -->
+   <section class="mouse-wheel-section">
+      <div class="swiper mouse-wheel-swipper">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide wheel-slide">
+               <div class="wheel-img"><img src="new-assets/imgs/mouse-wheel-design-2.webp" alt=""></div>
+               <div class="wheel-text">
+                  <p class="wheel-number">1</p>
+                  <h3>The Design</h3>
+                  <p class="narrow-letter-space">At Léo et Violette, we create our bags with you in mind. All our
+                     products are imagined and
+                     designed in Paris, in our offices on rue Sainte-Anne. Most of the time, an idea for a model
+                     comes from a need that you have expressed to us through the various feedbacks we collect
+                     throughout the year.</p>
+                  <a href="">Learn More</a>
+               </div>
+            </div>
+            <div class="swiper-slide wheel-slide second">
+               <div class="wheel-img"><img src="new-assets/imgs/mouse-wheel-design-1.webp" alt=""></div>
+               <div class="wheel-text">
+                  <p class="wheel-number">2</p>
+                  <h3>The Design</h3>
+                  <p class="narrow-letter-space">At Léo et Violette, we create our bags with you in mind. All our
+                     products are imagined and
+                     designed in Paris, in our offices on rue Sainte-Anne. Most of the time, an idea for a model
+                     comes from a need that you have expressed to us through the various feedbacks we collect
+                     throughout the year.</p>
+                  <a href="">Learn More</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
 
    <!-- fifteen -->
-   <section class="benefits py-5">
+   <section class="benefits py-5 mt-5">
       <div class="container-fluid">
          <div class="swiper why-choose-us-swipper">
             <div class="swiper-wrapper ">
@@ -651,8 +669,8 @@
             <div class="card">
                <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                     <button class="faq-btn collapsed narrow-letter-space" type="button" data-toggle="collapse" data-target="#collapseOne"
-                        aria-expanded="true" aria-controls="collapseOne">
+                     <button class="faq-btn collapsed narrow-letter-space" type="button" data-toggle="collapse"
+                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         What types of leather do you use for your bags?
                      </button>
                   </h5>
@@ -679,8 +697,8 @@
             <div class="card">
                <div class="card-header" id="headingTwo">
                   <h5 class="mb-0">
-                     <button class="faq-btn collapsed narrow-letter-space" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                        aria-expanded="false" aria-controls="collapseTwo">
+                     <button class="faq-btn collapsed narrow-letter-space" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         How do I care for and clean my leather bag?
                      </button>
                   </h5>
@@ -706,8 +724,8 @@
             <div class="card">
                <div class="card-header" id="headingThree">
                   <h5 class="mb-0">
-                     <button class="faq-btn collapsed narrow-letter-space" type="button" data-toggle="collapse" data-target="#collapseThree"
-                        aria-expanded="false" aria-controls="collapseThree">
+                     <button class="faq-btn collapsed narrow-letter-space" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         How long does shipping usually take?
                      </button>
                   </h5>
@@ -729,8 +747,8 @@
             <div class="card">
                <div class="card-header" id="headingfour">
                   <h5 class="mb-0">
-                     <button class="faq-btn collapsed narrow-letter-space" type="button" data-toggle="collapse" data-target="#collapsefour"
-                        aria-expanded="false" aria-controls="collapsefour">
+                     <button class="faq-btn collapsed narrow-letter-space" type="button" data-toggle="collapse"
+                        data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
                         Do you offer customization or personalization options for your leather bags?
                      </button>
                   </h5>
@@ -756,8 +774,8 @@
             <div class="card">
                <div class="card-header" id="headingFive">
                   <h5 class="mb-0">
-                     <button class="faq-btn collapsed narrow-letter-space" type="button" data-toggle="collapse" data-target="#collapseFive"
-                        aria-expanded="false" aria-controls="collapseFive">
+                     <button class="faq-btn collapsed narrow-letter-space" type="button" data-toggle="collapse"
+                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                         What is your return and exchange policy?
                      </button>
                   </h5>
@@ -785,7 +803,182 @@
       </div>
    </section>
 
+   <!-- footer -->
+   <section class="footer py-4 px-4 bg-white">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0">
+               <h6 class="text-uppercase mb-3">Newsletter</h6>
+               <p class="narrow-letter-space">Subscribe to receive updates, access to exclusive deals, and more.</p>
+               <input type="email" placeholder="Email" class="mb-3">
+               <button class="black-button text-uppercase">subscribe</button>
+               <div class="d-flex footer-social-icons mt-3">
+                  <a href="" class="d-block"><i class="fab fa-facebook-f"></i></a>
+                  <a href="" class="d-block"><i class="fab fa-twitter"></i></a>
+                  <a href="" class="d-block"><i class="fab fa-instagram"></i></a>
+                  <a href="" class="d-block"><i class="fab fa-vimeo-v"></i></a>
+               </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0">
+               <h6 class="text-uppercase mb-3">Shop</h6>
+               <a href="" class="narrow-letter-space">Women</a>
+               <a href="" class="narrow-letter-space">Men</a>
+               <a href="" class="narrow-letter-space">Small Leather Goods</a>
+               <a href="" class="narrow-letter-space">Collaboration</a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0">
+               <h6 class="text-uppercase mb-3">Information</h6>
+               <a href="" class="narrow-letter-space">Theme Features</a>
+               <a href="" class="narrow-letter-space">About us</a>
+               <a href="" class="narrow-letter-space">Contact us</a>
+               <a href="" class="narrow-letter-space">FAQ</a>
+               <a href="" class="narrow-letter-space">Maintenance Tips</a>
 
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-0">
+               <h6 class="text-uppercase mb-3">About the shop</h6>
+               <p class="narrow-letter-space story-p">The story of Leo and Violette, it's ours. We are Léo Dominguez &
+                  Violette
+                  Polchi. Two Parisian lovers
+                  sharing our lives for more than 8 years. Since the early days of our meeting, we always had the dream
+                  to develop a project together. Here it is!
+                  Thanks to Léo et Violette for allowing us to use their products in this demo store.</p>
+            </div>
+         </div>
+         <div
+            class="d-flex flex-column flex-lg-row justify-content-lg-between justify-content-center mt-4 mb-3 align-items-center">
+            <div class="d-flex footer-flag align-items-center "><img src="new-assets/imgs/us.jpeg" alt="flag"
+                  class="flag d-block mr-3"><span class="narrow-letter-space text-uppercase d-block">united states
+                  (usd$)</span></div>
+            <div class="narrow-letter-space my-4 my-lg-0 text-uppercase">© 2024 - Prestige - Allure - all rights
+               reserved</div>
+            <div>
+               <ul class="payment-methods unstyled-list">
+                  <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24"
+                        aria-labelledby="pi-visa">
+                        <title id="pi-visa">Visa</title>
+                        <path opacity=".07"
+                           d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+                        <path fill="#fff"
+                           d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+                        <path
+                           d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z"
+                           fill="#142688"></path>
+                     </svg></li>
+                  <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24"
+                        aria-labelledby="pi-master">
+                        <title id="pi-master">Mastercard</title>
+                        <path opacity=".07"
+                           d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+                        <path fill="#fff"
+                           d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+                        <circle fill="#EB001B" cx="15" cy="12" r="7"></circle>
+                        <circle fill="#F79E1B" cx="23" cy="12" r="7"></circle>
+                        <path fill="#FF5F00"
+                           d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z"></path>
+                     </svg></li>
+                  <li><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pi-american_express"
+                        viewBox="0 0 38 24" width="38" height="24">
+                        <title id="pi-american_express">American Express</title>
+                        <path fill="#000"
+                           d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3Z"
+                           opacity=".07"></path>
+                        <path fill="#006FCF"
+                           d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32Z"></path>
+                        <path fill="#FFF"
+                           d="M22.012 19.936v-8.421L37 11.528v2.326l-1.732 1.852L37 17.573v2.375h-2.766l-1.47-1.622-1.46 1.628-9.292-.02Z">
+                        </path>
+                        <path fill="#006FCF"
+                           d="M23.013 19.012v-6.57h5.572v1.513h-3.768v1.028h3.678v1.488h-3.678v1.01h3.768v1.531h-5.572Z">
+                        </path>
+                        <path fill="#006FCF"
+                           d="m28.557 19.012 3.083-3.289-3.083-3.282h2.386l1.884 2.083 1.89-2.082H37v.051l-3.017 3.23L37 18.92v.093h-2.307l-1.917-2.103-1.898 2.104h-2.321Z">
+                        </path>
+                        <path fill="#FFF"
+                           d="M22.71 4.04h3.614l1.269 2.881V4.04h4.46l.77 2.159.771-2.159H37v8.421H19l3.71-8.421Z">
+                        </path>
+                        <path fill="#006FCF"
+                           d="m23.395 4.955-2.916 6.566h2l.55-1.315h2.98l.55 1.315h2.05l-2.904-6.566h-2.31Zm.25 3.777.875-2.09.873 2.09h-1.748Z">
+                        </path>
+                        <path fill="#006FCF"
+                           d="M28.581 11.52V4.953l2.811.01L32.84 9l1.456-4.046H37v6.565l-1.74.016v-4.51l-1.644 4.494h-1.59L30.35 7.01v4.51h-1.768Z">
+                        </path>
+                     </svg>
+                  </li>
+                  <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" width="38" height="24" role="img"
+                        aria-labelledby="pi-paypal">
+                        <title id="pi-paypal">PayPal</title>
+                        <path opacity=".07"
+                           d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+                        <path fill="#fff"
+                           d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+                        <path fill="#003087"
+                           d="M23.9 8.3c.2-1 0-1.7-.6-2.3-.6-.7-1.7-1-3.1-1h-4.1c-.3 0-.5.2-.6.5L14 15.6c0 .2.1.4.3.4H17l.4-3.4 1.8-2.2 4.7-2.1z">
+                        </path>
+                        <path fill="#3086C8"
+                           d="M23.9 8.3l-.2.2c-.5 2.8-2.2 3.8-4.6 3.8H18c-.3 0-.5.2-.6.5l-.6 3.9-.2 1c0 .2.1.4.3.4H19c.3 0 .5-.2.5-.4v-.1l.4-2.4v-.1c0-.2.3-.4.5-.4h.3c2.1 0 3.7-.8 4.1-3.2.2-1 .1-1.8-.4-2.4-.1-.5-.3-.7-.5-.8z">
+                        </path>
+                        <path fill="#012169"
+                           d="M23.3 8.1c-.1-.1-.2-.1-.3-.1-.1 0-.2 0-.3-.1-.3-.1-.7-.1-1.1-.1h-3c-.1 0-.2 0-.2.1-.2.1-.3.2-.3.4l-.7 4.4v.1c0-.3.3-.5.6-.5h1.3c2.5 0 4.1-1 4.6-3.8v-.2c-.1-.1-.3-.2-.5-.2h-.1z">
+                        </path>
+                     </svg></li>
+                  <li><svg viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24"
+                        aria-labelledby="pi-diners_club">
+                        <title id="pi-diners_club">Diners Club</title>
+                        <path opacity=".07"
+                           d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+                        <path fill="#fff"
+                           d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"></path>
+                        <path
+                           d="M12 12v3.7c0 .3-.2.3-.5.2-1.9-.8-3-3.3-2.3-5.4.4-1.1 1.2-2 2.3-2.4.4-.2.5-.1.5.2V12zm2 0V8.3c0-.3 0-.3.3-.2 2.1.8 3.2 3.3 2.4 5.4-.4 1.1-1.2 2-2.3 2.4-.4.2-.4.1-.4-.2V12zm7.2-7H13c3.8 0 6.8 3.1 6.8 7s-3 7-6.8 7h8.2c3.8 0 6.8-3.1 6.8-7s-3-7-6.8-7z"
+                           fill="#3086C8"></path>
+                     </svg></li>
+                  <li><svg viewBox="0 0 38 24" width="38" height="24" role="img" aria-labelledby="pi-discover"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <title id="pi-discover">Discover</title>
+                        <path fill="#000" opacity=".07"
+                           d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"></path>
+                        <path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32z"
+                           fill="#fff"></path>
+                        <path
+                           d="M3.57 7.16H2v5.5h1.57c.83 0 1.43-.2 1.96-.63.63-.52 1-1.3 1-2.11-.01-1.63-1.22-2.76-2.96-2.76zm1.26 4.14c-.34.3-.77.44-1.47.44h-.29V8.1h.29c.69 0 1.11.12 1.47.44.37.33.59.84.59 1.37 0 .53-.22 1.06-.59 1.39zm2.19-4.14h1.07v5.5H7.02v-5.5zm3.69 2.11c-.64-.24-.83-.4-.83-.69 0-.35.34-.61.8-.61.32 0 .59.13.86.45l.56-.73c-.46-.4-1.01-.61-1.62-.61-.97 0-1.72.68-1.72 1.58 0 .76.35 1.15 1.35 1.51.42.15.63.25.74.31.21.14.32.34.32.57 0 .45-.35.78-.83.78-.51 0-.92-.26-1.17-.73l-.69.67c.49.73 1.09 1.05 1.9 1.05 1.11 0 1.9-.74 1.9-1.81.02-.89-.35-1.29-1.57-1.74zm1.92.65c0 1.62 1.27 2.87 2.9 2.87.46 0 .86-.09 1.34-.32v-1.26c-.43.43-.81.6-1.29.6-1.08 0-1.85-.78-1.85-1.9 0-1.06.79-1.89 1.8-1.89.51 0 .9.18 1.34.62V7.38c-.47-.24-.86-.34-1.32-.34-1.61 0-2.92 1.28-2.92 2.88zm12.76.94l-1.47-3.7h-1.17l2.33 5.64h.58l2.37-5.64h-1.16l-1.48 3.7zm3.13 1.8h3.04v-.93h-1.97v-1.48h1.9v-.93h-1.9V8.1h1.97v-.94h-3.04v5.5zm7.29-3.87c0-1.03-.71-1.62-1.95-1.62h-1.59v5.5h1.07v-2.21h.14l1.48 2.21h1.32l-1.73-2.32c.81-.17 1.26-.72 1.26-1.56zm-2.16.91h-.31V8.03h.33c.67 0 1.03.28 1.03.82 0 .55-.36.85-1.05.85z"
+                           fill="#231F20"></path>
+                        <path d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z"
+                           fill="url(#pi-paint0_linear)"></path>
+                        <path opacity=".65" d="M20.16 12.86a2.931 2.931 0 100-5.862 2.931 2.931 0 000 5.862z"
+                           fill="url(#pi-paint1_linear)"></path>
+                        <path
+                           d="M36.57 7.506c0-.1-.07-.15-.18-.15h-.16v.48h.12v-.19l.14.19h.14l-.16-.2c.06-.01.1-.06.1-.13zm-.2.07h-.02v-.13h.02c.06 0 .09.02.09.06 0 .05-.03.07-.09.07z"
+                           fill="#231F20"></path>
+                        <path
+                           d="M36.41 7.176c-.23 0-.42.19-.42.42 0 .23.19.42.42.42.23 0 .42-.19.42-.42 0-.23-.19-.42-.42-.42zm0 .77c-.18 0-.34-.15-.34-.35 0-.19.15-.35.34-.35.18 0 .33.16.33.35 0 .19-.15.35-.33.35z"
+                           fill="#231F20"></path>
+                        <path d="M37 12.984S27.09 19.873 8.976 23h26.023a2 2 0 002-1.984l.024-3.02L37 12.985z"
+                           fill="#F48120"></path>
+                        <defs>
+                           <linearGradient id="pi-paint0_linear" x1="21.657" y1="12.275" x2="19.632" y2="9.104"
+                              gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#F89F20"></stop>
+                              <stop offset=".25" stop-color="#F79A20"></stop>
+                              <stop offset=".533" stop-color="#F68D20"></stop>
+                              <stop offset=".62" stop-color="#F58720"></stop>
+                              <stop offset=".723" stop-color="#F48120"></stop>
+                              <stop offset="1" stop-color="#F37521"></stop>
+                           </linearGradient>
+                           <linearGradient id="pi-paint1_linear" x1="21.338" y1="12.232" x2="18.378" y2="6.446"
+                              gradientUnits="userSpaceOnUse">
+                              <stop stop-color="#F58720"></stop>
+                              <stop offset=".359" stop-color="#E16F27"></stop>
+                              <stop offset=".703" stop-color="#D4602C"></stop>
+                              <stop offset=".982" stop-color="#D05B2E"></stop>
+                           </linearGradient>
+                        </defs>
+                     </svg></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </section>
 
    <script src="assets/jquery-3.6.0.min.js?v=1.0.0"></script>
    <script src="assets/jquery-ui.min.js"></script>

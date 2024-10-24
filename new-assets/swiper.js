@@ -305,3 +305,19 @@ var swiper = new Swiper(".why-choose-us-swipper", {
         },
     },
 });
+
+// mouse wheel
+var swiper = new Swiper(".mouse-wheel-swipper", {
+    direction: "vertical",
+    slidesPerView: 1,
+    // mousewheel: true,
+    mousewheel: {
+        releaseOnEdges: true, 
+    },
+    speed:1500,
+    // breakpoints: {
+    //     768: {
+    //         direction: "vertical", 
+    //     }
+    // }
+});

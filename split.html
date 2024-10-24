@@ -1,91 +1,846 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Split Example</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .split-screen {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        .spit-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-        }
-
-        .split-text {
-            margin-bottom: 20px;
-        }
-
-        .split-products {
-            display: grid;
-            grid-template-columns: 1fr 10px 1fr;
-            height: 80%;
-            width: 100%;
-        }
-
-        .split-product {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            transition: width 0.3s ease;
-        }
-
-        .split-product img {
-            max-height: 100%;
-            max-width: 100%;
-        }
 
         .gutter {
-            background-color: #ccc;
+            background-color: #080808;
             cursor: ew-resize;
             width: 10px;
+        }
+
+        .split-container {
+            display: flex;
+            width: 80%;
+            height: 80vh;
+            margin: auto;
+        }
+
+        .red {
+            background-image: url(new-assets/imgs/split-left.webp);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .yellow {
+            background-image: url(new-assets/imgs/split-right.webp);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .red img , .yellow img {
+            width: 100%;
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
 </head>
+
 <body>
     <section class="split-screen">
-        <div class="container-fluid spit-container">
-            <div class="split-text text-center">
-                <h3>Le Dalia</h3>
-                <p>Choose your colour</p>
-            </div>
-
-            <div class="split-products">
-                <div class="split-product split-left">
-                    <div><img src="new-assets/imgs/split-left.webp" alt=""></div>
-                </div>
-                <div class="gutter"></div>
-                <div class="split-product split-right">
-                    <div><img src="new-assets/imgs/split-right.webp" alt=""></div>
-                </div>
-            </div>
+        <div class="split-container">
+            <div class="red"></div>
+            <div class="yellow"></div>
+            <img src="new-assets/imgs/split-left.webp" alt="" class="red">
+            <img src="new-assets/imgs/split-right.webp" alt="" class="yellow">
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
     <script>
-        // احضار العناصر:
-        plit(['.split-left', '.split-right'], {
-        gutterSize: 2, 
-        sizes: [50, 50],
-        cursor: 'ew-resize'
-    });
+        Split(['.red', '.yellow'], {
+            gutterSize:10,
+            sizes: [50, 50],
+            minSize: 0,
+            cursor: 'ew-resize'
+        });
     </script>
 </body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Images Example</title>
+    <style>
+        .gutter {
+            background-color: #080808;
+            cursor: ew-resize;
+            width: 10px;
+        }
+
+        .split-screen {
+            display: flex;
+            width: 80%;
+            height: 60vh;
+            margin: auto;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures images maintain aspect ratio */
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+</head>
+
+<body>
+    <section class="split-screen">
+        <div class="image-container">
+            <img src="new-assets/imgs/split-left.webp" alt="Image 1">
+        </div>
+        <div class="image-container">
+            <img src="new-assets/imgs/split-right.webp" alt="Image 2">
+        </div>
+    </section>
+    <script>
+        // Enable gutter and resizing for images
+        Split(['.image-container:nth-child(1)', '.image-container:nth-child(2)'], {
+            gutterSize: 10,
+            sizes: [50, 50],  // Initial sizes
+            minSize: 0,       // Allow collapse to the edge
+            cursor: 'ew-resize'
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bag Color Change Effect</title>
+    <style>
+        .split-screen {
+            position: relative;
+            width: 80%;
+            height: 60vh;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Base bag image */
+        .bag-black {
+            width: 100%;
+            height: 100%;
+            background: url('new-assets/imgs/split-right.webp') no-repeat center center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Overlay bag image (initially green) */
+        .bag-green {
+            width: 50%; /* Default width controlled by dragging */
+            height: 100%;
+            background: url('new-assets/imgs/split-left.webp') no-repeat center center;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Custom gutter styling */
+        .gutter {
+            background-color: #080808;
+            cursor: ew-resize;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10px;
+            left: calc(50% - 5px); /* Initially in the middle */
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="split-screen">
+        <div class="image-container">
+            <div class="bag-black"></div> 
+            <div class="bag-green"></div>
+            <div class="gutter"></div> 
+        </div>
+    </section>
+
+    <script>
+        const gutter = document.querySelector('.gutter');
+        const blackBag = document.querySelector('.bag-black');
+        const greenBag = document.querySelector('.bag-green');
+        const imageContainer = document.querySelector('.image-container');
+        
+        let isDragging = false;
+        let startX = 0;
+        let lastDirection = null; // Track the last drag direction
+
+        gutter.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            startX = e.clientX;  // Track the initial mouse position
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            lastDirection = null;  // Reset the direction when drag ends
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+
+            const containerRect = imageContainer.getBoundingClientRect();
+            let newWidth = e.clientX - containerRect.left;
+
+            if (newWidth < 0) newWidth = 0;
+            if (newWidth > containerRect.width) newWidth = containerRect.width;
+
+            // Calculate the current drag direction
+            let direction = e.clientX > startX ? 'right' : 'left';
+            startX = e.clientX;
+
+            // Change the base and overlay images based on drag direction
+            if (direction !== lastDirection) {
+                if (direction === 'right') {
+                    // Green is overlay (dragging to the right)
+                    greenBag.style.zIndex = 1;
+                    blackBag.style.zIndex = 0;
+                } else if (direction === 'left') {
+                    // Black is overlay (dragging to the left)
+                    blackBag.style.zIndex = 1;
+                    greenBag.style.zIndex = 0;
+                }
+                lastDirection = direction;  // Update the last direction
+            }
+
+            // Set the width of the green bag and position of the gutter
+            greenBag.style.width = newWidth + 'px';
+            gutter.style.left = newWidth - 5 + 'px';
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+<!-- free front end -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        $maxWidth: 960px;
+$minTablet: 767px;
+
+@mixin media($size) {
+	@if $size == 'tabletUpwards' {@media screen and ( min-width : $minTablet ) { @content; }}
+}
+
+body {
+	position: relative;
+	background-color: #DDDDDD;
+	font-family: 'helvetica', sans-serif;
+	font-weight: lighter;
+	font-size: 14px;
+	color: #555;
+	margin: 0;
+	padding: 0;
+	min-width: 320px;
+}
+
+h1 {
+	text-transform: uppercase;
+	color: #333;
+}
+
+h3 {
+	font-weight: lighter;
+	color: #555555;
+}
+
+a {
+	position: relative;
+	color: #a8244f;
+	text-decoration: none;
+	&:before {
+		content: "";
+		height: 2px;
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		right: 0;
+		background-color: darken(#a8244f, 10%);
+		transform: rotateY(90deg);
+		transition: transform 0.2s ease-in-out;
+	}
+	&:hover {
+		color: darken(#a8244f, 10%);
+		text-decoration: none;
+		&:before {
+			transform: rotateY(0deg);
+		}
+	}
+}
+
+.split {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: strech;
+	p {
+		flex-basis: 100%;
+		@include media('tabletUpwards') {
+			flex-basis: 48%;
+		}
+	}
+}
+
+nav.social {
+	display: inline-block;
+	padding: 0;
+	margin-bottom: 18px;
+	li {
+		list-style: none;
+		float: left;
+		a {
+			padding: 5px;
+		}
+		&:first-child a {
+			padding-left: 0;
+		}
+	}
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	margin: 50px 0;
+	.inner {
+		position: relative;
+		width: 100%;
+		max-width: $maxWidth;
+		margin: 0 auto;
+		overflow: hidden;
+		box-sizing: border-box;
+		padding: 20px 30px;
+		background-color: #EEE;
+	}
+}
+
+.comparison-slider-wrapper {
+	position: relative;
+	width: 100%;
+	margin: 20px 0;
+	background-color: white;
+
+	.comparison-slider {
+		position: relative;
+		width: 100%;
+		margin: 0;
+		border: 5px white solid;
+		box-sizing: border-box;
+		> img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.overlay {
+			display: none;
+			position: absolute;
+			width: 250px;
+			bottom: 20px;
+			right: 20px;
+			background-color: rgba(0, 0, 0, 0.4);
+			padding: 10px;
+			box-sizing: border-box;
+			color: #DDD;
+			text-align: right;
+			@include media('tabletUpwards') {
+				display: block;
+			}
+		}
+
+		.resize {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 50%;
+			overflow: hidden;
+			> img {
+				display: block;
+			}
+			.overlay {
+				right: auto;
+				left: 20px;
+				text-align: left;
+			}
+		}
+
+		.divider {
+			position: absolute;
+			width: 2px;
+			height: 100%;
+			background-color: rgba(256, 256, 256, 0.2);
+			left: 50%;
+			top: 0;
+			bottom: 0;
+			margin-left: -1px;
+			cursor: ew-resize;
+			&:before {
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				left: -9px;
+				top: 50%;
+				margin-top: -10px;
+				background-color: white;
+				transform: rotate(45deg);
+				transition: all 0.1s ease-in-out;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				left: -5px;
+				top: 50%;
+				margin-top: -6px;
+				background-color: white;
+				transform: rotate(45deg);
+				transition: all 0.1s ease-in-out;
+			}
+			&.draggable{
+				&:before {
+					width: 30px;
+					height: 30px;
+					left: -14px;
+					margin-top: -15px;
+				}
+				&:after {
+					width: 20px;
+					height: 20px;
+					left: -9px;
+					margin-top: -10px;
+					background-color: #555;
+				}
+			}
+		}
+	}
+
+	.caption {
+		position: relative;
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+		font-size: 12px;
+		font-style: italic;
+	}
+}
+
+.suppoprt-me {
+	display: inline-block;
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	width: 20vw;
+	max-width: 250px;
+	min-width: 200px;
+	z-index: 9;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="comparison-slider-wrapper">
+        
+        <div class="comparison-slider">
+            <div class="overlay">And I am the <strong>after</strong> image.</div>
+            <img src="https://raw.githubusercontent.com/Mario-Duarte/CodePen/main/assets/marioPhoto-2.jpg"
+                alt="marioPhoto 2">
+        
+            <div class="resize">
+                <div class="overlay">I am the <strong>before</strong> image.</div>
+                <img src="https://raw.githubusercontent.com/Mario-Duarte/CodePen/main/assets/marioPhoto-1.jpg"
+                    alt="marioPhoto 1">
+            </div>
+         
+            <div class="divider"></div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+
+                // If the comparison slider is present on the page lets initialise it, this is good you will include this in the main js to prevent the code from running when not needed
+                if ($(".comparison-slider")[0]) {
+                    let compSlider = $(".comparison-slider");
+
+                    //let's loop through the sliders and initialise each of them
+                    compSlider.each(function () {
+                        let compSliderWidth = $(this).width() + "px";
+                        $(this).find(".resize img").css({ width: compSliderWidth });
+                        drags($(this).find(".divider"), $(this).find(".resize"), $(this));
+                    });
+
+                    //if the user resizes the windows lets update our variables and resize our images
+                    $(window).on("resize", function () {
+                        let compSliderWidth = compSlider.width() + "px";
+                        compSlider.find(".resize img").css({ width: compSliderWidth });
+                    });
+                }
+            });
+
+            // This is where all the magic happens
+            // This is a modified version of the pen from Ege Görgülü - https://codepen.io/bamf/pen/jEpxOX - and you should check it out too.
+            function drags(dragElement, resizeElement, container) {
+
+                // This creates a variable that detects if the user is using touch input insted of the mouse.
+                let touched = false;
+                window.addEventListener('touchstart', function () {
+                    touched = true;
+                });
+                window.addEventListener('touchend', function () {
+                    touched = false;
+                });
+
+                // clicp the image and move the slider on interaction with the mouse or the touch input
+                dragElement.on("mousedown touchstart", function (e) {
+
+                    //add classes to the emelents - good for css animations if you need it to
+                    dragElement.addClass("draggable");
+                    resizeElement.addClass("resizable");
+                    //create vars
+                    let startX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
+                    let dragWidth = dragElement.outerWidth();
+                    let posX = dragElement.offset().left + dragWidth - startX;
+                    let containerOffset = container.offset().left;
+                    let containerWidth = container.outerWidth();
+                    let minLeft = containerOffset + 10;
+                    let maxLeft = containerOffset + containerWidth - dragWidth - 10;
+
+                    //add event listner on the divider emelent
+                    dragElement.parents().on("mousemove touchmove", function (e) {
+
+                        // if the user is not using touch input let do preventDefault to prevent the user from slecting the images as he moves the silder arround.
+                        if (touched === false) {
+                            e.preventDefault();
+                        }
+
+                        let moveX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
+                        let leftValue = moveX + posX - dragWidth;
+
+                        // stop the divider from going over the limits of the container
+                        if (leftValue < minLeft) {
+                            leftValue = minLeft;
+                        } else if (leftValue > maxLeft) {
+                            leftValue = maxLeft;
+                        }
+
+                        let widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + "%";
+
+                        $(".draggable").css("left", widthValue).on("mouseup touchend touchcancel", function () {
+                            $(this).removeClass("draggable");
+                            resizeElement.removeClass("resizable");
+                        });
+
+                        $(".resizable").css("width", widthValue);
+
+                    }).on("mouseup touchend touchcancel", function () {
+                        dragElement.removeClass("draggable");
+                        resizeElement.removeClass("resizable");
+
+                    });
+
+                }).on("mouseup touchend touchcancel", function (e) {
+                    // stop clicping the image and move the slider
+                    dragElement.removeClass("draggable");
+                    resizeElement.removeClass("resizable");
+
+                });
+
+            }
+
+        </script>
+</body>
+
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- font-awesome cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Panels. */
+        .splitview {
+            position: relative;
+            width: 100%;
+            min-height: 45vw;
+            overflow: hidden;
+        }
+
+        .panel {
+            position: absolute;
+            width: 100vw;
+            min-height: 45vw;
+            overflow: hidden;
+        }
+
+        .panel .content {
+            position: absolute;
+            width: 100vw;
+            min-height: 45vw;
+            color: #FFF;
+        }
+
+        .panel .description {
+            width: 25%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        .panel img {
+            box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.15);
+            width: 35%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .bottom {
+            background-color: rgb(44, 44, 44);
+            z-index: 1;
+        }
+
+        .bottom .description {
+            right: 5%;
+        }
+
+        .top {
+            /* background-color: rgb(77, 69, 173); */
+            z-index: 2;
+            width: 50vw;
+
+            /*-webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+    clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);*/
+        }
+
+        .top .description {
+            left: 5%;
+        }
+
+        /* Handle. */
+        .handle {
+            height: 100%;
+            position: absolute;
+            display: block;
+            background-color: rgb(253, 171, 0);
+            width: 5px;
+            top: 0;
+            left: 50%;
+            z-index: 3;
+        }
+
+        /* Skewed. */
+        .skewed .handle {
+            top: 50%;
+            /* transform: rotate(30deg) translateY(-50%); */
+            transform: translateY(-50%);
+            height: 200%;
+            -webkit-transform-origin: top;
+            -moz-transform-origin: top;
+            transform-origin: top;
+        }
+
+        .skewed .top {
+            transform: skew(-30deg);
+            margin-left: -1000px;
+            width: calc(50vw + 1000px);
+        }
+
+        .skewed .top .content {
+            transform: skew(30deg);
+            margin-left: 1000px;
+        }
+
+        /* Responsive. */
+        @media (max-width: 900px) {
+            body {
+                font-size: 75%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="splitview skewed">
+        <div class="panel bottom">
+            <div class="content">
+                <div class="description">
+                    <h1>The original image.</h1>
+                    <p>This is how the image looks like before applying a duotone effect.</p>
+                </div>
+
+                <img src="new-assets/imgs/split-right.webp" alt="Original">
+            </div>
+        </div>
+
+        <div class="panel top">
+            <div class="content">
+                <div class="description">
+                    <h1>The duotone image.</h1>
+                    <p>This is how the image looks like after applying a duotone effect.</p>
+                </div>
+
+                <img src="new-assets/imgs/split-left.webp" alt="Duotone">
+            </div>
+        </div>
+
+        <div class="handle"></div>
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var parent = document.querySelector('.splitview'),
+                topPanel = parent.querySelector('.top'),
+                handle = parent.querySelector('.handle'),
+                skewHack = 0,
+                delta = 0,
+                isDragging = false;
+
+            // If the parent has .skewed class, set the skewHack var.
+            if (parent.className.indexOf('skewed') != -1) {
+                skewHack = 1000;
+            }
+
+            // Start dragging when the mouse is pressed down on the handle
+            handle.addEventListener('mousedown', function () {
+                isDragging = true;
+                document.body.style.cursor = 'ew-resize'; // Change cursor to indicate dragging
+            });
+
+            // Stop dragging when the mouse is released
+            document.addEventListener('mouseup', function () {
+                isDragging = false;
+                document.body.style.cursor = 'default'; // Reset cursor
+            });
+
+            // Adjust panels on mouse move, only if dragging
+            document.addEventListener('mousemove', function (event) {
+                if (!isDragging) return;
+
+                // Calculate delta and position adjustments
+                delta = (event.clientX - window.innerWidth / 2) * 0.5;
+
+                // Move the handle
+                handle.style.left = event.clientX + delta + 'px';
+
+                // Adjust the top panel width
+                topPanel.style.width = event.clientX + skewHack + delta + 'px';
+            });
+        });
+
+    </script>
+</body>
+
 </html>
+
+
+
+<!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var parent = document.querySelector('.splitview'),
+        topPanel = parent.querySelector('.top'),
+        handle = parent.querySelector('.handle'),
+        skewHack = 0,
+        delta = 0;
+
+    // If the parent has .skewed class, set the skewHack var.
+    if (parent.className.indexOf('skewed') != -1) {
+        skewHack = 1000;
+    }
+
+    parent.addEventListener('mousemove', function(event) {
+        // Get the delta between the mouse position and center point.
+        delta = (event.clientX - window.innerWidth / 2) * 0.5;
+
+        // Move the handle.
+        handle.style.left = event.clientX + delta + 'px';
+
+        // Adjust the top panel width.
+        topPanel.style.width = event.clientX + skewHack + delta + 'px';
+    });
+});
+    </script> -->

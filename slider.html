@@ -4,117 +4,275 @@
 <head>
     <meta charset="utf-8" />
     <title>Swiper demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Demo styles -->
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        html,
+        /* html,
         body {
             position: relative;
             height: 100%;
-        }
+        } */
 
-        section {
+        /* body {
             background: #eee;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 14px;
             color: #000;
             margin: 0;
             padding: 0;
-            position: relative;
-            height: calc(100% - 75px);
-            /* margin-top: 37px; */
+        } */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .swiper {
+        .mouse-wheel-section {
+            height: 100vh;
+            background-image: url(new-assets/imgs/mouse-wheel-background.webp);
+            background-attachment: fixed;
+            position: absolute;
+        }
+
+        .mouse-wheel-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            /* padding: 0 4rem; */
+            background-color: rgba(26, 25, 25, 0.199);
+            z-index: 1;
         }
 
-        .products .swiper-slide {
+        .mouse-wheel-swipper {
+            height: 100%;
+        }
+
+        .mouse-wheel-swipper .swiper-slide {
             text-align: center;
             font-size: 18px;
-            background: #fff;
-            height: calc((100% - 30px) / 2) !important;
-
-            /* Center slide text vertically */
             display: flex;
-            flex-direction: column;
+            gap: 10%;
             justify-content: center;
             align-items: center;
-        }
-
-        .prod-img {
-            width: 50%;
-        }
-
-        .prod-img img {
+            align-content: center;
             width: 100%;
+            margin: auto;
         }
 
-        nav {
-            height: 75px;
+        .wheel-text {
+            width: 25%;
+            color: white;
+            /* background-color: aqua; */
+        }
+
+        .wheel-img {
+            height: 75vh;
+            width: 30%;
+            overflow: hidden;
+        }
+
+        .wheel-img img {
             width: 100%;
-            background-color: burlywood;
-            display: block;
+            object-fit: cover;
+            height: 100%;
         }
     </style>
 </head>
 
 <body>
     <!-- Swiper -->
-    <nav></nav>
-    <section>
-        <div class="swiper main-product-section">
-            <div class="swiper-wrapper products">
-                <div class="swiper-slide prod-card">
-                    <div class="prod-img"><img src="new-assets/brownBag.avif" alt=""></div>
-                    <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-                    <p>380$</p>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quas veniam vitae iure totam possimus
+        necessitatibus vero, harum, mollitia eaque suscipit corporis quaerat fuga, consequuntur ipsum porro temporibus
+        eveniet sequi et deserunt. Dolorum quae nihil nesciunt at accusantium ducimus architecto quibusdam quaerat
+        repellat tempora? Ex error voluptas minus tempore harum commodi iure ipsa soluta maxime ducimus, voluptatum
+        temporibus magni, cumque unde quibusdam officia quis? Ipsa aperiam recusandae nemo obcaecati provident beatae
+        magni minima asperiores accusantium a reprehenderit repudiandae dignissimos id consectetur, nisi deserunt alias
+        enim in tempora vel veniam quas, aliquam ea numquam? Recusandae, eos cum tenetur fugit nemo suscipit inventore
+        quasi ut praesentium error, magni possimus commodi molestiae similique, tempora sunt vero sint animi harum ipsa
+        officiis! Sint, delectus autem adipisci obcaecati laudantium totam rem, assumenda, voluptate ullam soluta illo?
+        Voluptatum magnam aperiam ab placeat nesciunt alias officia? Veniam perferendis unde ipsum minima aliquid magni
+        cupiditate sapiente. Quasi ut tempora aliquid pariatur sapiente eum, veritatis corporis mollitia illo veniam hic
+        eaque accusamus totam deleniti aspernatur a cupiditate facere beatae sunt. Dolor molestias error soluta
+        repellendus omnis sunt doloribus assumenda asperiores ipsum. Ab sapiente fugiat esse adipisci, quasi blanditiis
+        unde saepe aspernatur a in iure quis non ex nesciunt eligendi nostrum. Maiores sint, ad quidem, facere accusamus
+        ipsum consequuntur dolore in dignissimos facilis corrupti laboriosam mollitia ex harum. Modi veritatis eos eum
+        architecto illum excepturi aspernatur quasi facere quas hic alias minus consequuntur dignissimos earum id,
+        maxime inventore velit recusandae at, nemo aliquam pariatur magnam quidem. Harum vitae aliquid provident quae
+        laudantium optio deleniti maiores voluptas sed voluptatibus unde, sapiente dicta error tempore recusandae
+        ratione illo cupiditate? Sint totam quos corporis culpa, adipisci laudantium beatae unde, quam necessitatibus
+        perspiciatis accusamus. Aspernatur perferendis iusto repellendus sequi! Quis ipsum sunt sapiente non qui totam
+        perferendis culpa cupiditate nobis praesentium numquam blanditiis itaque voluptates, similique a quaerat? Earum,
+        quis delectus error cumque quidem eum possimus aut corporis excepturi soluta veniam nostrum rerum? Nisi ratione
+        quam quisquam suscipit vel accusantium amet, vitae officia eaque fuga? Sit necessitatibus, magni esse provident
+        fuga minima accusantium quaerat placeat, similique nulla ea, exercitationem sed excepturi modi soluta molestias
+        quibusdam ad tempore molestiae fugiat repudiandae! In soluta mollitia error, blanditiis quae dolorum illum quam
+        quis reprehenderit quos necessitatibus, ea eligendi totam dolor numquam reiciendis eaque labore minima, aperiam
+        enim? Molestias, tempora nulla. Eum officia mollitia quos cum nulla expedita, quae velit, reiciendis
+        dignissimos, libero quo illo sapiente cupiditate placeat. Recusandae eveniet illo eligendi, necessitatibus
+        tenetur sed deleniti nulla dolores animi delectus sint impedit incidunt tempore numquam? Qui explicabo, dolorum,
+        cupiditate veritatis ullam esse ipsa eveniet id consequuntur voluptatum eaque enim minima. Impedit maxime quae
+        placeat assumenda corrupti provident repudiandae. Accusamus eligendi odio, cupiditate possimus amet consectetur
+        numquam porro architecto excepturi magni, illum dolorem voluptatum perferendis id! In ipsam totam eum sint? Est
+        cumque corporis minus quis possimus sapiente nesciunt quo consectetur voluptatum nulla. Quidem saepe cumque,
+        recusandae, quo atque deleniti debitis perspiciatis distinctio dignissimos blanditiis soluta doloribus aliquam
+        incidunt optio nulla excepturi, repellat enim. Consectetur porro voluptatibus iure blanditiis aut dolore autem,
+        nulla exercitationem. Ullam asperiores officia totam, ipsam quas sapiente voluptate modi libero et quibusdam.
+        Sit eius aut atque, repudiandae facilis ea quam adipisci temporibus necessitatibus blanditiis aliquid, quisquam
+        voluptatem aliquam! Placeat dolorem consectetur tenetur rerum quasi aliquid sapiente, vero magnam repudiandae
+        voluptatem autem tempora aspernatur, soluta deleniti id sed. Deleniti inventore doloremque temporibus nemo optio
+        quod, reiciendis nostrum vel beatae aspernatur pariatur voluptatum ullam atque dolores neque odit, molestias
+        vero illum explicabo ipsam fuga impedit? Illo ducimus dolorum, porro fugiat distinctio quo rerum quas non
+        aperiam nihil! Deserunt eveniet quos temporibus recusandae deleniti eos reiciendis, maxime dolores hic natus
+        voluptatum ducimus fuga. Eius reiciendis laborum architecto, debitis adipisci unde molestiae explicabo aliquam
+        illo eos velit animi suscipit, iste impedit dolore fugiat? Unde ex, dolorem aspernatur aut provident laudantium
+        possimus illo eveniet ipsum iusto ducimus nam recusandae quibusdam beatae animi, blanditiis vero accusamus
+        aliquam libero eius maxime? Deleniti eaque assumenda officiis, accusamus laudantium, enim aut cumque ab odio
+        repudiandae totam dignissimos. Accusamus id neque natus atque delectus accusantium labore perspiciatis itaque
+        soluta! Est similique ex repudiandae, repellat vitae ea quaerat ratione, ducimus at officia, voluptatibus error.
+        Consequatur quia quisquam placeat, repudiandae magnam ad eveniet, magni inventore autem dolorem eligendi
+        possimus tenetur aperiam repellendus velit nemo, repellat nam earum ipsam tempora voluptate. Quia exercitationem
+        a quo deleniti cum totam tempora ipsam sunt? Illum debitis minus explicabo, eum delectus eius corporis omnis
+        enim animi iusto dolores molestiae, facilis perferendis laboriosam quod nam odio reprehenderit laudantium
+        exercitationem aperiam eligendi deserunt illo placeat! Ad inventore praesentium veritatis laboriosam cupiditate
+        iusto natus vero nam ullam ea laudantium minus minima quo impedit nostrum vitae exercitationem, quod
+        repellendus. Corrupti esse, fugit praesentium corporis sed hic, consequuntur, doloribus ea ab dolorem vitae ut
+        dolore fugiat accusantium quibusdam molestias quam explicabo enim quaerat at voluptatibus odit? Nisi excepturi
+        expedita ad iste dolor possimus, dignissimos modi molestias suscipit cumque nulla sit explicabo repellat magnam
+        dolorum fuga minima? Doloribus deserunt totam porro commodi, esse modi nobis aut accusantium consequatur
+        dignissimos velit temporibus magni ut ullam assumenda itaque! Culpa, quidem sint. Odio deserunt quaerat quas
+        nisi eos? Quos magnam tempora nobis placeat in laboriosam dolorum odio, libero molestiae quaerat, voluptate
+        officia tempore temporibus. Totam ratione exercitationem magnam ducimus dignissimos, unde sit nihil vel quis
+        autem error aliquam dolorum aut recusandae quia aspernatur rem omnis nulla minus voluptate cupiditate
+        voluptatum. Nulla doloremque tempore soluta itaque fugiat necessitatibus pariatur voluptatibus saepe nihil
+        inventore amet reiciendis consequuntur, nam dignissimos ad omnis consequatur ducimus beatae ipsa eum dolores
+        veniam. Adipisci recusandae nesciunt, neque at vel optio architecto doloribus repellendus pariatur, eos
+        suscipit, amet dolor magni mollitia deserunt esse laudantium voluptatem itaque obcaecati. Quaerat, delectus
+        perspiciatis tenetur exercitationem animi natus molestiae suscipit, a enim amet molestias esse. Explicabo
+        veritatis quia magni ea velit quasi iure voluptatum vero aliquid, odit tempora nihil repudiandae rerum soluta,
+        excepturi hic iste quam quo unde provident accusamus commodi? Ea quia facere error autem tenetur earum
+        accusantium aspernatur, perspiciatis expedita officiis mollitia doloremque, architecto nobis, facilis
+        repudiandae sed molestiae accusamus maiores.</div>
+    <section class="mouse-wheel-section">
+        <div class="swiper mouse-wheel-swipper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide wheel-slide">
+                    <div class="wheel-img"><img src="new-assets/imgs/mouse-wheel-design-2.webp" alt=""></div>
+                    <div class="wheel-text">
+                        <p>1</p>
+                        <h3>The Design</h3>
+                        <p>At Léo et Violette, we create our bags with you in mind. All our products are imagined and
+                            designed in Paris, in our offices on rue Sainte-Anne. Most of the time, an idea for a model
+                            comes from a need that you have expressed to us through the various feedbacks we collect
+                            throughout the year.</p>
+                        <a href="" class="underline">Learn More</a>
+                    </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="prod-img"><img src="new-assets/greenBag.avif" alt=""></div>
-                    <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-                    <p>380$</p>
-                </div>
-                <div class="swiper-slide"><div class="prod-img"><img src="new-assets/backbag.jpeg" alt=""></div>
-                <h6>Lorem ipsum dolor sit amet consectetur.</h6>
-                <p>380$</p></div>
-                <div class="swiper-slide">Slide 4</div>
-                <div class="swiper-slide">Slide 5</div>
-                <div class="swiper-slide">Slide 6</div>
-                <div class="swiper-slide">Slide 7</div>
-                <div class="swiper-slide">Slide 8</div>
-                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide wheel-slide">
+                    <div class="wheel-img"><img src="new-assets/imgs/mouse-wheel-design-1.webp" alt=""></div>
+                    <div class="wheel-text">
+                        <p>2</p>
+                        <h3>The Design</h3>
+                        <p>At Léo et Violette, we create our bags with you in mind. All our products are imagined and
+                            designed in Paris, in our offices on rue Sainte-Anne. Most of the time, an idea for a model
+                            comes from a need that you have expressed to us through the various feedbacks we collect
+                            throughout the year.</p>
+                        <a href="" class="underline">Learn More</a>
+                    </div>
+                </div>                
             </div>
-            <div class="swiper-pagination"></div>
+            <!-- <div class="swiper-pagination"></div> -->
         </div>
     </section>
-
-
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quas veniam vitae iure totam possimus
+        necessitatibus vero, harum, mollitia eaque suscipit corporis quaerat fuga, consequuntur ipsum porro temporibus
+        eveniet sequi et deserunt. Dolorum quae nihil nesciunt at accusantium ducimus architecto quibusdam quaerat
+        repellat tempora? Ex error voluptas minus tempore harum commodi iure ipsa soluta maxime ducimus, voluptatum
+        temporibus magni, cumque unde quibusdam officia quis? Ipsa aperiam recusandae nemo obcaecati provident beatae
+        magni minima asperiores accusantium a reprehenderit repudiandae dignissimos id consectetur, nisi deserunt alias
+        enim in tempora vel veniam quas, aliquam ea numquam? Recusandae, eos cum tenetur fugit nemo suscipit inventore
+        quasi ut praesentium error, magni possimus commodi molestiae similique, tempora sunt vero sint animi harum ipsa
+        officiis! Sint, delectus autem adipisci obcaecati laudantium totam rem, assumenda, voluptate ullam soluta illo?
+        Voluptatum magnam aperiam ab placeat nesciunt alias officia? Veniam perferendis unde ipsum minima aliquid magni
+        cupiditate sapiente. Quasi ut tempora aliquid pariatur sapiente eum, veritatis corporis mollitia illo veniam hic
+        eaque accusamus totam deleniti aspernatur a cupiditate facere beatae sunt. Dolor molestias error soluta
+        repellendus omnis sunt doloribus assumenda asperiores ipsum. Ab sapiente fugiat esse adipisci, quasi blanditiis
+        unde saepe aspernatur a in iure quis non ex nesciunt eligendi nostrum. Maiores sint, ad quidem, facere accusamus
+        ipsum consequuntur dolore in dignissimos facilis corrupti laboriosam mollitia ex harum. Modi veritatis eos eum
+        architecto illum excepturi aspernatur quasi facere quas hic alias minus consequuntur dignissimos earum id,
+        maxime inventore velit recusandae at, nemo aliquam pariatur magnam quidem. Harum vitae aliquid provident quae
+        laudantium optio deleniti maiores voluptas sed voluptatibus unde, sapiente dicta error tempore recusandae
+        ratione illo cupiditate? Sint totam quos corporis culpa, adipisci laudantium beatae unde, quam necessitatibus
+        perspiciatis accusamus. Aspernatur perferendis iusto repellendus sequi! Quis ipsum sunt sapiente non qui totam
+        perferendis culpa cupiditate nobis praesentium numquam blanditiis itaque voluptates, similique a quaerat? Earum,
+        quis delectus error cumque quidem eum possimus aut corporis excepturi soluta veniam nostrum rerum? Nisi ratione
+        quam quisquam suscipit vel accusantium amet, vitae officia eaque fuga? Sit necessitatibus, magni esse provident
+        fuga minima accusantium quaerat placeat, similique nulla ea, exercitationem sed excepturi modi soluta molestias
+        quibusdam ad tempore molestiae fugiat repudiandae! In soluta mollitia error, blanditiis quae dolorum illum quam
+        quis reprehenderit quos necessitatibus, ea eligendi totam dolor numquam reiciendis eaque labore minima, aperiam
+        enim? Molestias, tempora nulla. Eum officia mollitia quos cum nulla expedita, quae velit, reiciendis
+        dignissimos, libero quo illo sapiente cupiditate placeat. Recusandae eveniet illo eligendi, necessitatibus
+        tenetur sed deleniti nulla dolores animi delectus sint impedit incidunt tempore numquam? Qui explicabo, dolorum,
+        cupiditate veritatis ullam esse ipsa eveniet id consequuntur voluptatum eaque enim minima. Impedit maxime quae
+        placeat assumenda corrupti provident repudiandae. Accusamus eligendi odio, cupiditate possimus amet consectetur
+        numquam porro architecto excepturi magni, illum dolorem voluptatum perferendis id! In ipsam totam eum sint? Est
+        cumque corporis minus quis possimus sapiente nesciunt quo consectetur voluptatum nulla. Quidem saepe cumque,
+        recusandae, quo atque deleniti debitis perspiciatis distinctio dignissimos blanditiis soluta doloribus aliquam
+        incidunt optio nulla excepturi, repellat enim. Consectetur porro voluptatibus iure blanditiis aut dolore autem,
+        nulla exercitationem. Ullam asperiores officia totam, ipsam quas sapiente voluptate modi libero et quibusdam.
+        Sit eius aut atque, repudiandae facilis ea quam adipisci temporibus necessitatibus blanditiis aliquid, quisquam
+        voluptatem aliquam! Placeat dolorem consectetur tenetur rerum quasi aliquid sapiente, vero magnam repudiandae
+        voluptatem autem tempora aspernatur, soluta deleniti id sed. Deleniti inventore doloremque temporibus nemo optio
+        quod, reiciendis nostrum vel beatae aspernatur pariatur voluptatum ullam atque dolores neque odit, molestias
+        vero illum explicabo ipsam fuga impedit? Illo ducimus dolorum, porro fugiat distinctio quo rerum quas non
+        aperiam nihil! Deserunt eveniet quos temporibus recusandae deleniti eos reiciendis, maxime dolores hic natus
+        voluptatum ducimus fuga. Eius reiciendis laborum architecto, debitis adipisci unde molestiae explicabo aliquam
+        illo eos velit animi suscipit, iste impedit dolore fugiat? Unde ex, dolorem aspernatur aut provident laudantium
+        possimus illo eveniet ipsum iusto ducimus nam recusandae quibusdam beatae animi, blanditiis vero accusamus
+        aliquam libero eius maxime? Deleniti eaque assumenda officiis, accusamus laudantium, enim aut cumque ab odio
+        repudiandae totam dignissimos. Accusamus id neque natus atque delectus accusantium labore perspiciatis itaque
+        soluta! Est similique ex repudiandae, repellat vitae ea quaerat ratione, ducimus at officia, voluptatibus error.
+        Consequatur quia quisquam placeat, repudiandae magnam ad eveniet, magni inventore autem dolorem eligendi
+        possimus tenetur aperiam repellendus velit nemo, repellat nam earum ipsam tempora voluptate. Quia exercitationem
+        a quo deleniti cum totam tempora ipsam sunt? Illum debitis minus explicabo, eum delectus eius corporis omnis
+        enim animi iusto dolores molestiae, facilis perferendis laboriosam quod nam odio reprehenderit laudantium
+        exercitationem aperiam eligendi deserunt illo placeat! Ad inventore praesentium veritatis laboriosam cupiditate
+        iusto natus vero nam ullam ea laudantium minus minima quo impedit nostrum vitae exercitationem, quod
+        repellendus. Corrupti esse, fugit praesentium corporis sed hic, consequuntur, doloribus ea ab dolorem vitae ut
+        dolore fugiat accusantium quibusdam molestias quam explicabo enim quaerat at voluptatibus odit? Nisi excepturi
+        expedita ad iste dolor possimus, dignissimos modi molestias suscipit cumque nulla sit explicabo repellat magnam
+        dolorum fuga minima? Doloribus deserunt totam porro commodi, esse modi nobis aut accusantium consequatur
+        dignissimos velit temporibus magni ut ullam assumenda itaque! Culpa, quidem sint. Odio deserunt quaerat quas
+        nisi eos? Quos magnam tempora nobis placeat in laboriosam dolorum odio, libero molestiae quaerat, voluptate
+        officia tempore temporibus. Totam ratione exercitationem magnam ducimus dignissimos, unde sit nihil vel quis
+        autem error aliquam dolorum aut recusandae quia aspernatur rem omnis nulla minus voluptate cupiditate
+        voluptatum. Nulla doloremque tempore soluta itaque fugiat necessitatibus pariatur voluptatibus saepe nihil
+        inventore amet reiciendis consequuntur, nam dignissimos ad omnis consequatur ducimus beatae ipsa eum dolores
+        veniam. Adipisci recusandae nesciunt, neque at vel optio architecto doloribus repellendus pariatur, eos
+        suscipit, amet dolor magni mollitia deserunt esse laudantium voluptatem itaque obcaecati. Quaerat, delectus
+        perspiciatis tenetur exercitationem animi natus molestiae suscipit, a enim amet molestias esse. Explicabo
+        veritatis quia magni ea velit quasi iure voluptatum vero aliquid, odit tempora nihil repudiandae rerum soluta,
+        excepturi hic iste quam quo unde provident accusamus commodi? Ea quia facere error autem tenetur earum
+        accusantium aspernatur, perspiciatis expedita officiis mollitia doloremque, architecto nobis, facilis
+        repudiandae sed molestiae accusamus maiores.</div>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper(".main-product-section", {
-            slidesPerView: 4,
-            grid: {
-                rows: 2,
-            },
-            spaceBetween: 30,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
+        var swiper = new Swiper(".mouse-wheel-swipper", {
+            direction: "vertical",
+            slidesPerView: 1,
+
+            // mousewheel: true,
+            mousewheel: {
+                releaseOnEdges: true, 
+                sensitivity: 0.1,
             },
         });
     </script>
