@@ -1104,7 +1104,15 @@ header {
 
     .top-content,
     .bottom-content {
-        bottom: 20%;
+        bottom: 5%;
+    }
+
+    .screen-split-section,
+    .split-view,
+    .panel,
+    .split-img-container {
+        height: 80vh;
+        overflow: hidden;
     }
 }
 
@@ -1112,7 +1120,15 @@ header {
 
     .top-content,
     .bottom-content {
-        bottom: 25%;
+        bottom: 5%;
+    }
+
+    .screen-split-section,
+    .split-view,
+    .panel,
+    .split-img-container {
+        height: 60vh;
+        overflow: hidden;
     }
 }
 
@@ -1128,7 +1144,7 @@ header {
 
     .top-content,
     .bottom-content {
-        bottom: 30%;
+        bottom: 8%;
     }
 
     .bottom-content {
@@ -1140,13 +1156,29 @@ header {
         width: 40px;
         height: 40px;
     }
+
+    .screen-split-section,
+    .split-view,
+    .panel,
+    .split-img-container {
+        height: 45vh;
+        overflow: hidden;
+    }
 }
 
 @media(max-width:600px) {
 
     .top-content,
     .bottom-content {
-        bottom: 35%;
+        bottom: 8%;
+    }
+
+    .screen-split-section,
+    .split-view,
+    .panel,
+    .split-img-container {
+        height: 35vh;
+        overflow: hidden;
     }
 }
 
@@ -1154,7 +1186,7 @@ header {
 
     .top-content,
     .bottom-content {
-        bottom: 40%;
+        bottom: 10%;
     }
 
     .screen-split-section,
