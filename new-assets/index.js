@@ -74,9 +74,6 @@ closeSearchBtn.addEventListener('click', function () {
     searchDiv.classList.add('d-none');
 });
 
-// if(!searchDiv.classList.contains('d-none')){
-//     applyScrolledStyles()
-// }
 
 document.getElementById("open-sideNav").addEventListener("click", () => {
     document.getElementById("mySidenav").style.width = "80%";
@@ -119,17 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
         topPanel = parent.querySelector('.top-split-img'),
         handle = parent.querySelector('.handle'),
         isDragging = false;
-
-    // const leftImage = document.querySelector('.top-split-img img');
-    // const rightImage = document.querySelector('.bottom-split-img img');
-
-    // function updateHandleHeight() {
-    //     const leftHeight = leftImage.offsetHeight;
-    //     const rightHeight = rightImage.offsetHeight;
-
-    //     handle.style.height = `${Math.max(leftHeight, rightHeight)}px`;
-    // }
-    // updateHandleHeight();
 
     parent.addEventListener('mousedown', function () {
         isDragging = true;

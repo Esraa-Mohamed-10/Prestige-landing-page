@@ -288,12 +288,10 @@ header {
     overflow-x: hidden;
     position: relative;
     height: 100vh;
-    /* height: calc(100vh - 75px); */
 }
 
 .hero .hero-swiper {
     width: 100%;
-    /* height: calc(100vh - 25px); */
     height: 100vh;
     position: relative;
 }
@@ -408,8 +406,7 @@ header {
     display: none;
     font-size: 20px;
     transform: translateX(-50%);
-    box-shadow: 0 2px 3px rgba(128, 127, 127, 0.2);
-    border-radius: 5px;
+    letter-spacing: 0 !important;
 }
 
 
@@ -542,16 +539,18 @@ header {
 }
 
 .women {
-    height: 100vh;
+    /* height: 100vh; */
     /* Adjust height as needed */
     background-size: cover;
     background-position: center;
 }
 
+.men {
+    margin-bottom: 18px;
+}
+
 .men,
 .accessories {
-    height: 42.8vh;
-    /* Adjust height as needed */
     background-size: cover;
     background-position: center;
 }
@@ -588,6 +587,7 @@ header {
     .men,
     .accessories {
         height: 30vh;
+        margin-bottom: 17px;
     }
 }
 
