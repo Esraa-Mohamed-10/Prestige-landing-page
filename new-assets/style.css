@@ -237,16 +237,12 @@ header {
     transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
-/* .sidenav a:hover {
-    color: #f1f1f1;
-} */
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     font-size: 36px;
 }
 
@@ -967,46 +963,49 @@ header {
 
 /* split screen style */
 .screen-split-section {
-    min-height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* background-color: #2e2e2e; */
 }
 
 .split-view {
     position: relative;
     width: 80%;
-    min-height: 90vh;
+    height: 90vh;
     overflow: hidden;
     user-select: none;
     cursor: ew-resize;
+    /* background-color: blueviolet; */
 
 }
 
 .panel {
     position: absolute;
     width: 80vw;
-    min-height: 90vh;
+    height: 90vh;
     overflow: hidden;
-
+    /* background-color: chocolate; */
 }
 
 .split-img-container {
     position: absolute;
     width: 80vw;
-    min-height: 90vh;
+    height: 90vh;
     color: #FFF;
 
 }
 
 .split-img-container img {
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 3px;
 }
 
@@ -1066,12 +1065,12 @@ header {
 }
 
 .handle {
-    height: 85vh;
+    height: 100%;
+    /* top: 2.5%; */
     position: absolute;
     display: block;
     background-color: white;
     width: 2px;
-    top: 2.7%;
     left: 50%;
     z-index: 3;
 }
@@ -1156,6 +1155,14 @@ header {
     .top-content,
     .bottom-content {
         bottom: 40%;
+    }
+
+    .screen-split-section,
+    .split-view,
+    .panel,
+    .split-img-container {
+        height: 30vh;
+        overflow: hidden;
     }
 }
 

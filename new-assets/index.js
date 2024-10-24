@@ -62,12 +62,12 @@ searchBtn.addEventListener('click', function () {
         navbar.style.setProperty('background-color', 'white', 'important');
         navbar.style.setProperty('color', 'black', 'important');
         logo.src = 'new-assets/media/logo.webp';
-    
+
         document.querySelectorAll('.nav-page').forEach(link => {
             link.style.setProperty('color', 'black', 'important');
         });
 
-    } 
+    }
 });
 
 closeSearchBtn.addEventListener('click', function () {
@@ -120,9 +120,20 @@ document.addEventListener('DOMContentLoaded', function () {
         handle = parent.querySelector('.handle'),
         isDragging = false;
 
+    // const leftImage = document.querySelector('.top-split-img img');
+    // const rightImage = document.querySelector('.bottom-split-img img');
+
+    // function updateHandleHeight() {
+    //     const leftHeight = leftImage.offsetHeight;
+    //     const rightHeight = rightImage.offsetHeight;
+
+    //     handle.style.height = `${Math.max(leftHeight, rightHeight)}px`;
+    // }
+    // updateHandleHeight();
+
     parent.addEventListener('mousedown', function () {
         isDragging = true;
-        document.body.style.cursor = 'ew-resize'; // Change cursor to indicate dragging
+        document.body.style.cursor = 'ew-resize';
     });
 
 
@@ -134,40 +145,34 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('mousemove', function (event) {
         if (!isDragging) return;
 
-        // Move the handle
         handle.style.left = event.clientX + 'px';
 
-        // Adjust the top panel width
         topPanel.style.width = event.clientX + 'px';
     });
 
-     // Touch events
-     parent.addEventListener('touchstart', function (event) {
+    parent.addEventListener('touchstart', function (event) {
         isDragging = true;
-        document.body.style.cursor = 'ew-resize'; // Change cursor to indicate dragging
-        event.preventDefault(); // Prevent default scrolling behavior
+        document.body.style.cursor = 'ew-resize';
+        event.preventDefault();
     });
 
     parent.addEventListener('touchend', function () {
         isDragging = false;
-        document.body.style.cursor = 'default'; // Reset cursor
+        document.body.style.cursor = 'default';
     });
 
     parent.addEventListener('touchmove', function (event) {
         if (!isDragging) return;
-
-        // Get the touch position
-        var touch = event.touches[0]; // Get the first touch point
-        handle.style.left = touch.clientX + 'px'; // Move the handle
-
-        // Adjust the top panel width
-        topPanel.style.width = touch.clientX + 'px'; // Adjust the top panel width
+        var touch = event.touches[0];
+        handle.style.left = touch.clientX + 'px';
+        topPanel.style.width = touch.clientX + 'px';
     });
 
     document.addEventListener('dragstart', function (event) {
-        event.preventDefault(); // يمنع السحب
+        event.preventDefault();
     });
 })
+
 
 
 
