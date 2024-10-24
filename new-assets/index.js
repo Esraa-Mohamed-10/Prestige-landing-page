@@ -56,11 +56,27 @@ navbar.addEventListener('mouseleave', () => {
 
 searchBtn.addEventListener('click', function () {
     searchDiv.classList.toggle('d-none');
+
+    if (!searchDiv.classList.contains('d-none')) {
+        isScrolling = true
+        navbar.style.setProperty('background-color', 'white', 'important');
+        navbar.style.setProperty('color', 'black', 'important');
+        logo.src = 'new-assets/media/logo.webp';
+    
+        document.querySelectorAll('.nav-page').forEach(link => {
+            link.style.setProperty('color', 'black', 'important');
+        });
+
+    } 
 });
 
 closeSearchBtn.addEventListener('click', function () {
     searchDiv.classList.add('d-none');
 });
+
+// if(!searchDiv.classList.contains('d-none')){
+//     applyScrolledStyles()
+// }
 
 document.getElementById("open-sideNav").addEventListener("click", () => {
     document.getElementById("mySidenav").style.width = "80%";
@@ -123,6 +139,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Adjust the top panel width
         topPanel.style.width = event.clientX + 'px';
+    });
+
+     // Touch events
+     parent.addEventListener('touchstart', function (event) {
+        isDragging = true;
+        document.body.style.cursor = 'ew-resize'; // Change cursor to indicate dragging
+        event.preventDefault(); // Prevent default scrolling behavior
+    });
+
+    parent.addEventListener('touchend', function () {
+        isDragging = false;
+        document.body.style.cursor = 'default'; // Reset cursor
+    });
+
+    parent.addEventListener('touchmove', function (event) {
+        if (!isDragging) return;
+
+        // Get the touch position
+        var touch = event.touches[0]; // Get the first touch point
+        handle.style.left = touch.clientX + 'px'; // Move the handle
+
+        // Adjust the top panel width
+        topPanel.style.width = touch.clientX + 'px'; // Adjust the top panel width
     });
 
     document.addEventListener('dragstart', function (event) {
